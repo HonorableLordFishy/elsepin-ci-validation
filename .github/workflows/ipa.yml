@@ -1,0 +1,49 @@
+name: Build IPA
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  ipa:
+    runs-on: macos-26
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Show toolchain
+        run: |
+          xcodebuild -version
+          swift --version
+
+      - name: Install project generator and script deps
+        run: |
+          set -euo pipefail
+          brew install xcodegen
+          python3 -m pip install --quiet --break-system-packages pillow pyyaml || python3 -m pip install --quiet pillow pyyaml
+
+      - name: Verify resources and helpers
+        run: |
+          set -euo pipefail
+          python3 scripts/check_app_identity.py
+          python3 scripts/check_appearance.py
+          python3 scripts/package_helpers.py --check
+
+      - name: Build and package unsigned IPA
+        run: |
+          set -o pipefail
+          bash scripts/build-ipa.sh 2>&1 | tee build/ipa-build.log
+
+      - name: Inspect packaged IPA
+        run: |
+          set -euo pipefail
+          ls -lh build/*.ipa
+          unzip -l build/*.ipa | head -20
+
+      - name: Upload IPA
+        uses: actions/upload-artifact@v4
+        with:
+          name: elsepin-ipa
+          path: build/*.ipa

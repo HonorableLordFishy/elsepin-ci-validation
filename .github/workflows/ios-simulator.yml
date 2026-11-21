@@ -1,0 +1,101 @@
+name: iOS simulator tests
+
+on:
+  workflow_dispatch:
+    inputs:
+      ui_focus:
+        description: Which UI checks to run
+        type: choice
+        options: [home, search, pins, routes, all]
+        default: home
+
+permissions:
+  contents: read
+
+jobs:
+  simulator:
+    runs-on: macos-26
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Show toolchain and runtimes
+        run: |
+          xcodebuild -version
+          xcrun simctl list runtimes
+
+      - name: Prepare isolated simulator project
+        run: |
+          set -euo pipefail
+          brew install xcodegen xcbeautify
+          python3 -m venv .build/validation-venv
+          .build/validation-venv/bin/pip install --quiet 'PyYAML==6.0.2'
+          .build/validation-venv/bin/python scripts/make_validation_project.py
+          xcodegen generate --spec project.validation.json
+          mkdir -p .build/simulator-evidence
+          python3 scripts/prepare_validation_simulator.py
+
+      - name: Compile simulator app and UI tests
+        run: |
+          set -o pipefail
+          xcodebuild -project ElsepinValidation.xcodeproj -scheme Locus -configuration Debug \
+            -destination "platform=iOS Simulator,id=$VALIDATION_SIMULATOR" \
+            -derivedDataPath .build/simulator-validation \
+            -parallel-testing-enabled NO CODE_SIGNING_ALLOWED=NO build-for-testing \
+            2>&1 | tee .build/simulator-evidence/simulator-build.log | xcbeautify
+
+      - name: Boot disposable simulator
+        timeout-minutes: 8
+        run: |
+          xcrun simctl boot "$VALIDATION_SIMULATOR"
+          xcrun simctl bootstatus "$VALIDATION_SIMULATOR" -b
+
+      - name: Run focused UI checks
+        env:
+          UI_FOCUS: ${{ inputs.ui_focus }}
+        run: |
+          set -o pipefail
+          test_selection=()
+          if [[ "$UI_FOCUS" == home ]]; then
+            for test_name in testIdleTraySitsAboveSolidNavigation testIdleTraySitsAboveGlassNavigation; do
+              test_selection+=("-only-testing:LocusValidationUITests/ElsepinFlowUITests/$test_name")
+            done
+          elif [[ "$UI_FOCUS" == search ]]; then
+            for test_name in testSearchSubmitFailureAndRetry testSearchCancellationRejectsLateResults testSearchDismissalAndForegroundInterruption testSearchInterruptedWhilePendingThenReplaced; do
+              test_selection+=("-only-testing:LocusValidationUITests/ElsepinFlowUITests/$test_name")
+            done
+          elif [[ "$UI_FOCUS" == pins ]]; then
+            test_selection+=("-only-testing:LocusValidationUITests/ElsepinFlowUITests/testSavedPinsCrossCutoffDuringPinchAndStayVisibleWhenRotated")
+            test_selection+=("-only-testing:LocusValidationUITests/ElsepinFlowUITests/testDeletedSelectionAfterLongListScroll")
+            test_selection+=("-only-testing:LocusValidationUITests/ElsepinFlowUITests/testSavedPinLowerEdgeHoldOnlyMovesPreview")
+          elif [[ "$UI_FOCUS" == routes ]]; then
+            for test_name in testUsualSpeedsApplyToNewRoutesAndPersist testSavedLegModeAndCustomSpeedsSurviveReopening testRecalculateSavedRouteRetainsStopsAndSavesNewSpeed; do
+              test_selection+=("-only-testing:LocusValidationUITests/ElsepinFlowUITests/$test_name")
+            done
+          fi
+          xcrun simctl install "$VALIDATION_SIMULATOR" .build/simulator-validation/Build/Products/Debug-iphonesimulator/ElsepinValidation.app
+          xcrun simctl privacy "$VALIDATION_SIMULATOR" grant location-always com.n3mostudio.elsepin.validation
+          xcodebuild -project ElsepinValidation.xcodeproj -scheme Locus -configuration Debug \
+            -destination "platform=iOS Simulator,id=$VALIDATION_SIMULATOR" \
+            -derivedDataPath .build/simulator-validation \
+            -resultBundlePath .build/simulator-evidence/UI.xcresult \
+            -parallel-testing-enabled NO \
+            "${test_selection[@]}" CODE_SIGNING_ALLOWED=NO test-without-building \
+            2>&1 | tee .build/simulator-evidence/ui-tests.log | xcbeautify
+
+      - name: Export screenshots and results
+        if: always()
+        timeout-minutes: 4
+        run: |
+          if test -f .build/simulator-evidence/UI.xcresult/Info.plist; then
+            xcrun xcresulttool export attachments --path .build/simulator-evidence/UI.xcresult --output-path .build/simulator-evidence/attachments || true
+            xcrun xcresulttool get test-results summary --path .build/simulator-evidence/UI.xcresult > .build/simulator-evidence/summary.json || true
+          fi
+
+      - name: Upload simulator evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: simulator-evidence
+          path: .build/simulator-evidence
+          if-no-files-found: warn
