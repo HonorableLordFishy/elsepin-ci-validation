@@ -102,7 +102,18 @@ final class ElsepinFlowUITests: XCTestCase {
 
     @discardableResult private func setVisibleSpeed(_ mode: String, position: CGFloat) throws -> Double {
         let slider = routeControl(app.sliders["\(mode) speed in miles per hour"])
-        slider.adjust(toNormalizedSliderPosition: position)
+        if position >= 1 {
+            // XCUITest's normalized drag stops just short of the track end, which
+            // reads 5.8 mph on a 1...6 walk slider. Grab the thumb at the midpoint
+            // and push it to the trailing edge so the maximum is really reached.
+            slider.adjust(toNormalizedSliderPosition: 0.5)
+            slider.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5))
+                .press(forDuration: 0.1,
+                       thenDragTo: slider.coordinate(withNormalizedOffset: CGVector(dx: 1, dy: 0.5)),
+                       withVelocity: .slow, thenHoldForDuration: 0.2)
+        } else {
+            slider.adjust(toNormalizedSliderPosition: position)
+        }
         let text = try XCTUnwrap(slider.value as? String)
         return try XCTUnwrap(Double(text.components(separatedBy: " ")[0]))
     }
