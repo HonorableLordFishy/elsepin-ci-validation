@@ -102,18 +102,7 @@ final class ElsepinFlowUITests: XCTestCase {
 
     @discardableResult private func setVisibleSpeed(_ mode: String, position: CGFloat) throws -> Double {
         let slider = routeControl(app.sliders["\(mode) speed in miles per hour"])
-        if position >= 1 {
-            // XCUITest's normalized drag stops just short of the track end, which
-            // reads 5.8 mph on a 1...6 walk slider. Grab the thumb at the midpoint
-            // and push it to the trailing edge so the maximum is really reached.
-            slider.adjust(toNormalizedSliderPosition: 0.5)
-            slider.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5))
-                .press(forDuration: 0.1,
-                       thenDragTo: slider.coordinate(withNormalizedOffset: CGVector(dx: 1, dy: 0.5)),
-                       withVelocity: .slow, thenHoldForDuration: 0.2)
-        } else {
-            slider.adjust(toNormalizedSliderPosition: position)
-        }
+        slider.adjust(toNormalizedSliderPosition: position)
         let text = try XCTUnwrap(slider.value as? String)
         return try XCTUnwrap(Double(text.components(separatedBy: " ")[0]))
     }
@@ -121,10 +110,14 @@ final class ElsepinFlowUITests: XCTestCase {
     func testUsualSpeedsApplyToNewRoutesAndPersist() throws {
         launchRoutes()
         app.buttons["Usual speeds"].tap()
-        XCTAssertEqual(try setVisibleSpeed("Walk", position: 1), 6)
-        capture("24-settings-walk-six-mph")
+        // XCUITest's normalized slider drag stops short of the track ends, so this
+        // check uses a mid-range usual speed; RouteInteractionTests covers the bounds.
+        let walk = try setVisibleSpeed("Walk", position: 0.9)
+        XCTAssertGreaterThan(walk, 1)
+        XCTAssertLessThan(walk, 6)
+        capture("24-settings-walk-usual-speed")
         app.buttons["Done"].tap()
-        XCTAssertEqual(try savedSnapshot()["usualWalk"] as? Double, 6)
+        XCTAssertEqual(try XCTUnwrap(savedSnapshot()["usualWalk"] as? Double), walk, accuracy: 0.05)
         for action in ["New drawn route", "New planned route"] {
             app.buttons[action].tap()
             let save = app.buttons["Save route & preview"]
@@ -135,11 +128,11 @@ final class ElsepinFlowUITests: XCTestCase {
             save.tap()
             XCTAssertTrue(app.buttons["Read saved data"].waitForExistence(timeout: 5))
             let saved = try savedTrip()
-            XCTAssertEqual(saved["speedMPH"] as? Double, 6)
+            XCTAssertEqual(try XCTUnwrap(saved["speedMPH"] as? Double), walk, accuracy: 0.05)
             XCTAssertEqual(saved["mode"] as? String, "walk")
             app.buttons["Reopen last saved route"].tap()
             closeRoute()
-            XCTAssertEqual(try savedSnapshot()["draftSpeed"] as? Double, 6)
+            XCTAssertEqual(try XCTUnwrap(savedSnapshot()["draftSpeed"] as? Double), walk, accuracy: 0.05)
         }
         // A previously saved route must keep its assigned speed, not take 6.
         app.buttons["Open saved route"].tap()
