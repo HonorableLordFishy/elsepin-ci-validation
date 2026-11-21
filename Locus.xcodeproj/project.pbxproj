@@ -1,0 +1,1196 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0143B2D35D24714001ACC7DD /* MapPanProjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D366F8BE0AE3454F01106B /* MapPanProjection.swift */; };
+		02B50409EF1B982B998CE002 /* LocationVerification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878B752D334D97C0E689DCA5 /* LocationVerification.swift */; };
+		0441B00E73D79F0C013281A1 /* HomeWidgetsSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947CC969C23E547912106D44 /* HomeWidgetsSettingsView.swift */; };
+		06ABEA1F92E21CF9F4E8ECB7 /* SessionTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F82FA6DDE30EAB61C28997 /* SessionTimeline.swift */; };
+		06FCD5136FBBD9709E60B843 /* CompanionConnectionIssue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F707F3D25F78166FFD2C44F6 /* CompanionConnectionIssue.swift */; };
+		0841717F13F22A7A0D261C6B /* TripFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BC7115B5A2CDF40C094337 /* TripFeatures.swift */; };
+		0B4BE39693C99BEFBCE2A1AD /* PrivacyRules.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A2FF60E24B6F661AB4E0E4 /* PrivacyRules.swift */; };
+		0C54FFE80073DEE59C1608D5 /* DeveloperLogRules.swift in Sources */ = {isa = PBXBuildFile; fileRef = A143D03C540B6D9BAE457508 /* DeveloperLogRules.swift */; };
+		0C78ABD1E0B70A0732F7EE2F /* PairOnDeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE84038C9223A84BAFFAE233 /* PairOnDeviceView.swift */; };
+		0D7E985D8A0DA9DBE48C5B5A /* LocusActivity.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 524089103C557940B61B26E2 /* LocusActivity.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		1406A639F1123470ED211365 /* SessionPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A158B3051B3538FA4EA96AC /* SessionPresentation.swift */; };
+		14C4350C1EAE94A55D5F068F /* ReliabilityRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43445E7F8D796A93E5ADAB7A /* ReliabilityRecorder.swift */; };
+		1BAB0E5E93B3D8E1E18F1BB5 /* RecentlyDeletedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B252B95495AFCE887718D30 /* RecentlyDeletedView.swift */; };
+		1C6F28ACEE784EFFBC658667 /* TripRecovery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127B67E23500BDAB4F7FD1E6 /* TripRecovery.swift */; };
+		1C92AD5A5709778B982A4043 /* DrawnPathEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2636E9664FC07393C807835 /* DrawnPathEdit.swift */; };
+		1CB4C8E7168D45C2762E90ED /* FindMyChecksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C7AE5685A5B9AFC967943E /* FindMyChecksView.swift */; };
+		1CBCD6A08AA473AB0CB526CA /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA9F9A2A821575AEE768E67 /* Theme.swift */; };
+		20EC807D442DA3E48DEB112F /* AppResetRules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4186C2C038F48872CE9F18AC /* AppResetRules.swift */; };
+		212A9E8904044EF3447E662A /* NamedArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1274D15694C6B08506BEA4 /* NamedArea.swift */; };
+		2164BBFF9D17060ACE80D7E4 /* WidgetLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188A2CF66A8DE184B0AA4C0F /* WidgetLibrary.swift */; };
+		228A61981317AEC4BFAC4FAE /* ProblemReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559D2EE243F7D87981D80929 /* ProblemReport.swift */; };
+		23D95ED8AA45ED64000C728A /* RouteEditing.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85F0AE33D89C621FA820C8D /* RouteEditing.swift */; };
+		24ABFCE50CC89E42AD09AEA4 /* SessionPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02349A57FCEA9055B18DF2B4 /* SessionPreferences.swift */; };
+		26ED568EC7F11922D52B2276 /* DrawnPathEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2636E9664FC07393C807835 /* DrawnPathEdit.swift */; };
+		26F0290A8D8B56361E001FEF /* BackupImportReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECD87AA9104250CB4FD0ADA /* BackupImportReview.swift */; };
+		271E1FB5B2E47FB4D87231F4 /* TripEditHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B1F8BB42741C2A66A43E3A /* TripEditHistory.swift */; };
+		2874C287F08D0BD9044452D3 /* ShiftIcon-Afterhours-Dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 692B6C33198FF2D92C323C6F /* ShiftIcon-Afterhours-Dark.png */; };
+		29B86A73B4641FBDB3B30A20 /* ShiftIcon-Afterhours-Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D692BBC8E2FE682C8BA3AB17 /* ShiftIcon-Afterhours-Default.png */; };
+		2BC48E538BD29CA6B611F586 /* AppearanceSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2EBDE0E2F511864E58FB30 /* AppearanceSettingsView.swift */; };
+		2D719677D77D851D73D2BA60 /* PairingDocumentPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6BE765DFC4FB848609C8AA /* PairingDocumentPicker.swift */; };
+		2ED1A52DF1FB998D0BAB29E4 /* LibraryBackup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0003B2B847A65218388662AE /* LibraryBackup.swift */; };
+		2F817EA5AC811395FCEED7AC /* LibraryBackup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0003B2B847A65218388662AE /* LibraryBackup.swift */; };
+		31193DACDC9D36F80258F513 /* RoutePlacesEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FFBBE77F543F482FE3EC45E /* RoutePlacesEditor.swift */; };
+		34A3391A5F5CD17DF9B8316B /* RoutePlanning.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00E537F6EB131BFD39960A6 /* RoutePlanning.swift */; };
+		36C7F25072E2F5B3794B06BE /* AppearancePresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1DD2912A1CF707AD15DE40 /* AppearancePresentation.swift */; };
+		396045390C20B141302E67BE /* RecentlyDeletedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8E57ECD2455292570F2EE4 /* RecentlyDeletedStore.swift */; };
+		399A22DC83AABC7682CFAF06 /* PrivacyRules.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A2FF60E24B6F661AB4E0E4 /* PrivacyRules.swift */; };
+		39FCB8C0E7050B9161E600C6 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1C1367D937C33DF4F1FBE6 /* SettingsView.swift */; };
+		3F60C27B1FBD26E98A6179EA /* StableReleaseUpdates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131776EEC49FCFEAC5550854 /* StableReleaseUpdates.swift */; };
+		3F84179EF76E8AA074797361 /* SavedPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799094E9B1F051BEAD82D2C1 /* SavedPlace.swift */; };
+		402AB330448B064A39DDE68A /* MapPanProjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D366F8BE0AE3454F01106B /* MapPanProjection.swift */; };
+		41622C4D112CF14318210A71 /* PairOnDeviceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BC5277FD75A01A31B9830D /* PairOnDeviceService.swift */; };
+		41C4D3FD075B16CC02347EE5 /* TripEditHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B1F8BB42741C2A66A43E3A /* TripEditHistory.swift */; };
+		432D13A17BCD5CA32C4D6FB9 /* SessionNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB61EF92FC030C75653F126 /* SessionNotifications.swift */; };
+		433035331ABD4F4A57704874 /* DeveloperLogObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5257BB38DCB274930AC15636 /* DeveloperLogObserver.swift */; };
+		442D9109FA3234FA35E1D681 /* ShiftIcon-EmberSwitchpath-Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 03AF4F87FEC06D13F9C73012 /* ShiftIcon-EmberSwitchpath-Default.png */; };
+		467EF0429DA1A464CAD000F0 /* SessionPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A158B3051B3538FA4EA96AC /* SessionPresentation.swift */; };
+		490981C7F60C3CC52E7D907F /* JourneyCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A324B9DEB3CB81C478DB74F6 /* JourneyCard.swift */; };
+		4A19A245C3B57EB4E5B02CDE /* DeviceTunnel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E2EBD3F6F937176E4EC13F /* DeviceTunnel.swift */; };
+		4CB13A425BE3ABBB7E8F3FAE /* CloudServiceChecks.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6D986DE00B91A1CCE8B63D /* CloudServiceChecks.swift */; };
+		4D8AE1F6CBFF14C0E8910820 /* LocusActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F0EE2A5C796AB45A23644A /* LocusActivityAttributes.swift */; };
+		4F187CF5DCE279FC4E2C0C0A /* TripEditHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353B28A57311709589886541 /* TripEditHistoryView.swift */; };
+		539DBE6DBAECA0E310EE1524 /* ShiftIcon-Glacier-Default.png in Resources */ = {isa = PBXBuildFile; fileRef = BCFA8A386D261B7675FCA268 /* ShiftIcon-Glacier-Default.png */; };
+		544715AB8B371AB302FF7648 /* ControlInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF21E70A4FE4DBE84A5AA3A /* ControlInteraction.swift */; };
+		58239C4A77C949F92872F9E7 /* SessionActivityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3595D09295BBC9B41EA63C47 /* SessionActivityController.swift */; };
+		582C1B41F15123F32D851373 /* RouteLifecycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF205A9DD2450E36A40A6B0 /* RouteLifecycle.swift */; };
+		58A92C97FFF20434E2FA3C0C /* RouteEditing.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85F0AE33D89C621FA820C8D /* RouteEditing.swift */; };
+		58AACEA7AD5BB8D869FD8F4B /* CompanionLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1336AAF929C2DABFB1A8401 /* CompanionLink.swift */; };
+		5CBC25E323347BD06E8DADD4 /* DeletedLibraryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD94D8F8EA6E858B7F1C9FF /* DeletedLibraryItem.swift */; };
+		5ED15F3A789A2EBC5138DE02 /* ShiftIcon-PrismJumpgate-Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EE2D8A6DC6CABFEBABC8BFA /* ShiftIcon-PrismJumpgate-Default.png */; };
+		5F0D5D66287706B5C327CFCA /* DeletedLibraryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD94D8F8EA6E858B7F1C9FF /* DeletedLibraryItem.swift */; };
+		5F5AE605D86838979230045F /* ShiftDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68857E26C7C1D20764C83F51 /* ShiftDesign.swift */; };
+		601F3CA02CB336A0AD3892FC /* RoutePlanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044F751F81B01D36D37462C1 /* RoutePlanner.swift */; };
+		620D88DDF9D05C75B2F70E0A /* ShiftIcon-Afterhours-Tinted.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E3161B82E2220F968BD5E68 /* ShiftIcon-Afterhours-Tinted.png */; };
+		6493D5144A614759442872EA /* PairingFileImport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A41D09D30E29E7C2B66D6F /* PairingFileImport.swift */; };
+		655500CB4E992C87AEC73A23 /* ShiftIcon-Glacier-Dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 59D99C19C471E819E964DC9E /* ShiftIcon-Glacier-Dark.png */; };
+		680B3D533AB91FDE6062EF11 /* LocusActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F0EE2A5C796AB45A23644A /* LocusActivityAttributes.swift */; };
+		6B4B90556540530521194E93 /* UsualSpeedsSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1A67AF180FD68CD8108DC9 /* UsualSpeedsSettingsView.swift */; };
+		6CDD03B250A31190B617761A /* RemoteFindMy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3ADD464DDD7D9FF5D5D7EF /* RemoteFindMy.swift */; };
+		72AACD0C27F51401B3BE7131 /* BackupImportReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E484ACB17C2EC393878D35 /* BackupImportReader.swift */; };
+		745BDDCD6CECE6B3C21EF6A5 /* CompanionClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E7E31C6C2C8A3E813BB5B4 /* CompanionClient.swift */; };
+		74A5BCF6953128864737A070 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D4CA41C622A34E45EF21F54 /* Assets.xcassets */; };
+		74E8D982368E318891C93BB0 /* RouteContinuation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE72E7AEE62A49FFB775070 /* RouteContinuation.swift */; };
+		793C6285BDE959495B7EECAE /* OpenSourceNotices.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3091E2487B50AA19913444D0 /* OpenSourceNotices.txt */; };
+		7F558E139421E4F31E612721 /* SpeedUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8ED6CF5245B986B7B59E5E6 /* SpeedUnit.swift */; };
+		7F5E933D8E67C95DBE210357 /* TripRecoveryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EEFD7C9CBB6573454A4D0C /* TripRecoveryStore.swift */; };
+		7F98170C9B8BB329DC38CEAB /* RemoteFindMyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53566F86AF5764FE435FCB77 /* RemoteFindMyController.swift */; };
+		824D08C2AC8FD477F58DE51F /* LocalDevVPN.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAD463F53BD704A35A8E65F /* LocalDevVPN.swift */; };
+		82EF75632DB9268BBB2531C7 /* AppResetSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B55BC0DF9E794550D5B5BDD /* AppResetSection.swift */; };
+		82F641876B7862525B4C1A18 /* SessionSettingsSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6633791CEEE166F46DE060 /* SessionSettingsSections.swift */; };
+		83957B2E5ED3277AD1660D53 /* BackupImportReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E106657E6978167FA96297C /* BackupImportReviewView.swift */; };
+		83D63478BF012E572D329843 /* PairableHostAdvertiser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD401B2BF295561897BDABE6 /* PairableHostAdvertiser.swift */; };
+		846CE98C2AF5DDBA5A8628EE /* Personalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB6E14CE9B193FC6CB29828 /* Personalization.swift */; };
+		8497CAF78733455CBF01CD35 /* ReliabilityRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8EE90480A802F4F8FAF3DF /* ReliabilityRun.swift */; };
+		86805385C6AB7924240FE553 /* PairingFileImport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A41D09D30E29E7C2B66D6F /* PairingFileImport.swift */; };
+		87B0D41458D6AF0D39C9AAA4 /* RoutePlannerSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76779E56819A74B78236EF1 /* RoutePlannerSheet.swift */; };
+		87D85E5112091E74DB2D9902 /* ShiftIcon-Glacier-Tinted.png in Resources */ = {isa = PBXBuildFile; fileRef = E9A3B225E362F522681FBF7F /* ShiftIcon-Glacier-Tinted.png */; };
+		89E2A58410B3D535A5B6D9A9 /* ShiftIcon-TitaniumJumpgate-Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1ED9C31EDE1F007D4AB9DB67 /* ShiftIcon-TitaniumJumpgate-Default.png */; };
+		8BAFF417C05B16738FA03B63 /* CompanionLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1336AAF929C2DABFB1A8401 /* CompanionLink.swift */; };
+		8E1F3EBF4EE5148D59CE3BC3 /* SessionDiagnostics.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BB3D2CBC94394DCA14D9E9 /* SessionDiagnostics.swift */; };
+		8EAFB147F0F0E2AAE207D276 /* RouteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC0C702516F159A7EF6D853 /* RouteBuilder.swift */; };
+		8F49E8F88A9290D1A9772D38 /* SetupReadiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2F2DCBC6F02C8D9C521F37 /* SetupReadiness.swift */; };
+		92D539FFAE67D9DBF64D00B8 /* CloudServiceChecks.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6D986DE00B91A1CCE8B63D /* CloudServiceChecks.swift */; };
+		9555DF042AC5235880AF8DE6 /* SessionTimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC9F12238296CAC6205D98E /* SessionTimelineView.swift */; };
+		976D8B4B49C6B6588EA59B2F /* LocusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DE64DA7097F210F1075553 /* LocusApp.swift */; };
+		97BFCD4BD2EAE20D6742DACC /* Personalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB6E14CE9B193FC6CB29828 /* Personalization.swift */; };
+		99F0DC40752A6B5287025B5C /* LocationVerification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878B752D334D97C0E689DCA5 /* LocationVerification.swift */; };
+		9BF2AC270A11F1006C44BC46 /* ShiftIcon-Porcelain-Tinted.png in Resources */ = {isa = PBXBuildFile; fileRef = BFD8A5C1938A71E827E028AD /* ShiftIcon-Porcelain-Tinted.png */; };
+		9CBC91D16F68226569C30B3F /* RoutePlanning.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00E537F6EB131BFD39960A6 /* RoutePlanning.swift */; };
+		9DDA3DBC8A1C927466FE7ECA /* TripViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E1E5045502562273943819 /* TripViews.swift */; };
+		A01C61E25CE3E3509BD6D58D /* TravelControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FF25D833D355D0E697D706 /* TravelControls.swift */; };
+		A06F936021A2EEE209695227 /* ReliabilityRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8EE90480A802F4F8FAF3DF /* ReliabilityRun.swift */; };
+		A0A01E02BA9812CAEA11A8A5 /* ControlInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF21E70A4FE4DBE84A5AA3A /* ControlInteraction.swift */; };
+		A14E1492860C0A17506BF93F /* SessionTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F82FA6DDE30EAB61C28997 /* SessionTimeline.swift */; };
+		A266F5D2BC2238E782817B45 /* ConnectionDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBE4312C734EA78639D349 /* ConnectionDetailsView.swift */; };
+		A2CE8D262A4EA2342CC131B7 /* ShiftAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0EE6E07F09B45481C8C078 /* ShiftAppearance.swift */; };
+		A53617A148703669B9C500AE /* StableReleaseUpdates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131776EEC49FCFEAC5550854 /* StableReleaseUpdates.swift */; };
+		A787753B799400FE26FE922E /* HomeWidgetPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C951707F387D8A69B7E68 /* HomeWidgetPublisher.swift */; };
+		A985794530D021807424304C /* MapPinAdjustment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14B292089EE8477E309C49B /* MapPinAdjustment.swift */; };
+		AB35A419877FF9CA0B4AB114 /* JoystickPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF6D1EA6EBAAF543339FF81 /* JoystickPad.swift */; };
+		AC1BBA0F82E89EB56800992E /* PairingStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7977CA785FF0B09F4F88DE7D /* PairingStore.swift */; };
+		AC757C94DD58DFCBE8CFB719 /* ShiftBrandViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EF69C0BB77503740547EBA /* ShiftBrandViews.swift */; };
+		ACCF3937D67385B4EBEBD75B /* BackupImportReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECD87AA9104250CB4FD0ADA /* BackupImportReview.swift */; };
+		AD1070A046FF5379BAB24529 /* AppPrivacyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DB2686B3B7F7032039FCBD /* AppPrivacyController.swift */; };
+		AD4E0E99C597E881AF4ACFE5 /* RouteEditorViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3473105232D7062C7C13CE /* RouteEditorViews.swift */; };
+		AD898DE83698134B79595F2C /* ShiftAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0EE6E07F09B45481C8C078 /* ShiftAppearance.swift */; };
+		ADA2D143DFB61E5EE05062D6 /* RoutePlaceSearchSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9507F778CEA2FED64070A48 /* RoutePlaceSearchSheet.swift */; };
+		AEA6AA7E64F6F6A7F0EE69B5 /* ShiftAppearanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02A1483D99BC43D9CEA739F /* ShiftAppearanceController.swift */; };
+		B08D36E269071BAA44757D69 /* RemoteFindMy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3ADD464DDD7D9FF5D5D7EF /* RemoteFindMy.swift */; };
+		B10A777C5622EE884A890643 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1AF0F32E88B4227CA45694 /* RootView.swift */; };
+		B2F80FD073C071D2F5AC0FEC /* CompanionConnectionIssue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F707F3D25F78166FFD2C44F6 /* CompanionConnectionIssue.swift */; };
+		B62E25F5A2721EEAC25B9661 /* DeveloperLogStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415DCE10A8407A172CE08F1B /* DeveloperLogStore.swift */; };
+		B6968D400DACADE3AA2793BF /* TripLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E54F151F7ED15A39BCE62F /* TripLibrary.swift */; };
+		B6C07F371E6CE44D2953EDE1 /* StopDurationControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A36736E0B6A65F3D3C79C37 /* StopDurationControl.swift */; };
+		BB121B5C163480670AA7768D /* TripToolsViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457B7DA9B1C11FE44E73414A /* TripToolsViews.swift */; };
+		BE9992BCE75347B60FA56BC7 /* DeveloperLogExportSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1B61BA68456DDC5EE49522 /* DeveloperLogExportSection.swift */; };
+		BEC944FAD9A9FF0A756B6D0C /* BackupImportReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E484ACB17C2EC393878D35 /* BackupImportReader.swift */; };
+		BFB13BD2D6A9C4793E8C1493 /* LocusHomeWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80586905F7D0B0FE4D11D284 /* LocusHomeWidgets.swift */; };
+		BFDB8EB84516C11B9A1EDF76 /* NamedArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1274D15694C6B08506BEA4 /* NamedArea.swift */; };
+		BFDD797F5F7B0DB70D5A7A8E /* AppearancePolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933D8770CF0920EC6F496D32 /* AppearancePolicy.swift */; };
+		BFF69AD8D496CAFD3549112A /* SetupReadiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2F2DCBC6F02C8D9C521F37 /* SetupReadiness.swift */; };
+		C3F792D45FFF6DDABD63EAC0 /* SavedPlaceEditorSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFC4589D2C4CFC55D0EEBB6 /* SavedPlaceEditorSheet.swift */; };
+		C5583445C0C1EE0E16D5D62B /* PrivacySettingsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8180F7B25FE93375F67675 /* PrivacySettingsSection.swift */; };
+		C56A1B32D54A05D72CD0F399 /* LocusLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C72FDA51C1CDF75424003B /* LocusLiveActivity.swift */; };
+		C5B176B29163E524B776757A /* BackgroundKeepAlive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5415BEF759B8C8AF04096B3E /* BackgroundKeepAlive.swift */; };
+		C8FAE1F7E9754DA5FBCB9875 /* AppResetRules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4186C2C038F48872CE9F18AC /* AppResetRules.swift */; };
+		CB6D796581DF0C8BFEDEBD8D /* RouteLifecycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF205A9DD2450E36A40A6B0 /* RouteLifecycle.swift */; };
+		CC123836D602137CA97D210E /* RemoteFindMyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FCCBEAAA58F9D9C8789650 /* RemoteFindMyView.swift */; };
+		CCF65F4770185F2F135A6860 /* Elsepin-FindMy-Cloud.zip in Resources */ = {isa = PBXBuildFile; fileRef = E84E53D1D12F7B0C491FF31A /* Elsepin-FindMy-Cloud.zip */; };
+		CEE11DC237712E91963C8230 /* AppUpdateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E4D5AA160627583B2FA7EC /* AppUpdateController.swift */; };
+		D4418BE8EA5E7026E5C8EBF4 /* ProblemReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559D2EE243F7D87981D80929 /* ProblemReport.swift */; };
+		D49B4617C4797076F2CEC2BC /* DeveloperLogRules.swift in Sources */ = {isa = PBXBuildFile; fileRef = A143D03C540B6D9BAE457508 /* DeveloperLogRules.swift */; };
+		D5163A324DC7D4DE24789358 /* LocationVerificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B349994C31005872E548BA /* LocationVerificationController.swift */; };
+		D5613248D3DDD96C0D62BF7F /* MapHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F714A23C4C718E67E978565F /* MapHomeView.swift */; };
+		D657D193DD4E6C718D545ED3 /* RouteGeometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AF65B15CA38A33654832F2 /* RouteGeometry.swift */; };
+		D75F341BE7B8F5F6E17C0E96 /* NamedAreasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182A67940FAF35E1D246B8F5 /* NamedAreasView.swift */; };
+		D88CEC476C11B3D427E703F2 /* Elsepin-Windows-Helper.zip in Resources */ = {isa = PBXBuildFile; fileRef = 6F47A0A9D6C8976B8F4BD39D /* Elsepin-Windows-Helper.zip */; };
+		DA2B8023B167C95C2A034C47 /* LocationEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377FB9983B927B5898D09160 /* LocationEngine.swift */; };
+		DEEF68D96347B442FEF10ECC /* ShiftIcon-IonJumpgate-Default.png in Resources */ = {isa = PBXBuildFile; fileRef = A52F5F3028DC916321054C8B /* ShiftIcon-IonJumpgate-Default.png */; };
+		DF8F89F497F80428BDD92417 /* AppearancePolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933D8770CF0920EC6F496D32 /* AppearancePolicy.swift */; };
+		E0AA71976B0B02C723E85A5E /* SetupConnectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A172505BC1A861440C1789DB /* SetupConnectionModel.swift */; };
+		E31A698C0CF8B0A5A6715AC1 /* SpeedSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB1B60FF160F07CD448961 /* SpeedSlider.swift */; };
+		E54C5DFBAA0EC98B164E0743 /* ShiftIcon-Porcelain-Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F5E015669C9CEE3D9826A16 /* ShiftIcon-Porcelain-Default.png */; };
+		E5BE2C78B366076D498E0E1C /* ShiftIcon-Porcelain-Dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EF838D526D69971952229D6 /* ShiftIcon-Porcelain-Dark.png */; };
+		E72F87ED28E3A73F0FB14260 /* AppUpdateNotice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5542A5B8EA7B4C5273208C /* AppUpdateNotice.swift */; };
+		EA7795A0D36F3F0AFA464944 /* SpoofSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C3F15BC482A2CBF13B1EA6 /* SpoofSession.swift */; };
+		ED6B0A63D06D18C5E23A12F5 /* ProblemReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5E0D0A3E5322B7CD47D752 /* ProblemReportView.swift */; };
+		EE3B62A64B69EE7C79485BEB /* LibraryBackupInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303411BEB8455BB8C0B2DC04 /* LibraryBackupInput.swift */; };
+		EF32B74BF6B2E74B17569F80 /* RouteGeometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AF65B15CA38A33654832F2 /* RouteGeometry.swift */; };
+		EF53D2FA159D5EFA6DA439C5 /* PathEditorSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D7ABCBF4DA1719AF8413A6 /* PathEditorSheet.swift */; };
+		EF6F12D3652938E68D9E3F2B /* SpeedUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8ED6CF5245B986B7B59E5E6 /* SpeedUnit.swift */; };
+		EF820AEF5D0E563A24EA6929 /* WidgetLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188A2CF66A8DE184B0AA4C0F /* WidgetLibrary.swift */; };
+		EF903819D396B3E04B69B5BA /* AppResetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C9F18048656DF4E07E22A6B /* AppResetController.swift */; };
+		F0F463B69550D04C26071502 /* TripFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BC7115B5A2CDF40C094337 /* TripFeatures.swift */; };
+		F4128F71D1ED444EA88786C9 /* TripRecovery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127B67E23500BDAB4F7FD1E6 /* TripRecovery.swift */; };
+		F42C461AA339262E17E26A10 /* SetupFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429366C3732ACF4031A7006B /* SetupFlowView.swift */; };
+		F8A8DEF1249AB260C4FF901A /* SilentAudioKeepAlive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF917A85B507FDDCF382E2F /* SilentAudioKeepAlive.swift */; };
+		F8EC4A2B72AD0C2DA5079479 /* SketchMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883F1619590DB12EDC93DE0E /* SketchMapView.swift */; };
+		F9F23C522657CE7A41CD289C /* LibraryBackupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F96A1E3D11AA07C1FEBA19B /* LibraryBackupView.swift */; };
+		FC308F675F36E8BFEC3D6A4F /* DeveloperLogStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415DCE10A8407A172CE08F1B /* DeveloperLogStore.swift */; };
+		FF19419AB0B32A95D7784D0A /* ShiftBrandViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EF69C0BB77503740547EBA /* ShiftBrandViews.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6C8A3A795A6AD04AFDB8685D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB04EC8B4299D1D64DC4EDE5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7C9157E61AC5A8B7243827F2;
+			remoteInfo = LocusActivity;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		102D0B6D9EC32A109A2B86EE /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				0D7E985D8A0DA9DBE48C5B5A /* LocusActivity.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0003B2B847A65218388662AE /* LibraryBackup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryBackup.swift; sourceTree = "<group>"; };
+		02349A57FCEA9055B18DF2B4 /* SessionPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionPreferences.swift; sourceTree = "<group>"; };
+		03AF4F87FEC06D13F9C73012 /* ShiftIcon-EmberSwitchpath-Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ShiftIcon-EmberSwitchpath-Default.png"; sourceTree = "<group>"; };
+		03DE64DA7097F210F1075553 /* LocusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocusApp.swift; sourceTree = "<group>"; };
+		044F751F81B01D36D37462C1 /* RoutePlanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutePlanner.swift; sourceTree = "<group>"; };
+		04F0EE2A5C796AB45A23644A /* LocusActivityAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocusActivityAttributes.swift; sourceTree = "<group>"; };
+		0A158B3051B3538FA4EA96AC /* SessionPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionPresentation.swift; sourceTree = "<group>"; };
+		0A8E57ECD2455292570F2EE4 /* RecentlyDeletedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentlyDeletedStore.swift; sourceTree = "<group>"; };
+		0BF205A9DD2450E36A40A6B0 /* RouteLifecycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteLifecycle.swift; sourceTree = "<group>"; };
+		0C5542A5B8EA7B4C5273208C /* AppUpdateNotice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUpdateNotice.swift; sourceTree = "<group>"; };
+		0E1C1367D937C33DF4F1FBE6 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		0EF838D526D69971952229D6 /* ShiftIcon-Porcelain-Dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ShiftIcon-Porcelain-Dark.png"; sourceTree = "<group>"; };
+		0EFC4589D2C4CFC55D0EEBB6 /* SavedPlaceEditorSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPlaceEditorSheet.swift; sourceTree = "<group>"; };
+		10D7ABCBF4DA1719AF8413A6 /* PathEditorSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathEditorSheet.swift; sourceTree = "<group>"; };
+		127B67E23500BDAB4F7FD1E6 /* TripRecovery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripRecovery.swift; sourceTree = "<group>"; };
+		131776EEC49FCFEAC5550854 /* StableReleaseUpdates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StableReleaseUpdates.swift; sourceTree = "<group>"; };
+		1541AFB2DCA2890CD376BEE0 /* LocusActivity.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LocusActivity.entitlements; sourceTree = "<group>"; };
+		182A67940FAF35E1D246B8F5 /* NamedAreasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamedAreasView.swift; sourceTree = "<group>"; };
+		188A2CF66A8DE184B0AA4C0F /* WidgetLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetLibrary.swift; sourceTree = "<group>"; };
+		1AC9F12238296CAC6205D98E /* SessionTimelineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionTimelineView.swift; sourceTree = "<group>"; };
+		1B252B95495AFCE887718D30 /* RecentlyDeletedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentlyDeletedView.swift; sourceTree = "<group>"; };
+		1DB6E14CE9B193FC6CB29828 /* Personalization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Personalization.swift; sourceTree = "<group>"; };
+		1ED9C31EDE1F007D4AB9DB67 /* ShiftIcon-TitaniumJumpgate-Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ShiftIcon-TitaniumJumpgate-Default.png"; sourceTree = "<group>"; };
+		1FC0C702516F159A7EF6D853 /* RouteBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteBuilder.swift; sourceTree = "<group>"; };
+		20A41D09D30E29E7C2B66D6F /* PairingFileImport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairingFileImport.swift; sourceTree = "<group>"; };
+		21D5BB24B768AA010AB8CD40 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		2D4CA41C622A34E45EF21F54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2E3161B82E2220F968BD5E68 /* ShiftIcon-Afterhours-Tinted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ShiftIcon-Afterhours-Tinted.png"; sourceTree = "<group>"; };
+		2E6BE765DFC4FB848609C8AA /* PairingDocumentPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairingDocumentPicker.swift; sourceTree = "<group>"; };
+		303411BEB8455BB8C0B2DC04 /* LibraryBackupInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryBackupInput.swift; sourceTree = "<group>"; };
+		3091E2487B50AA19913444D0 /* OpenSourceNotices.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = OpenSourceNotices.txt; sourceTree = "<group>"; };
+		353B28A57311709589886541 /* TripEditHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripEditHistoryView.swift; sourceTree = "<group>"; };
+		3595D09295BBC9B41EA63C47 /* SessionActivityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionActivityController.swift; sourceTree = "<group>"; };
+		377FB9983B927B5898D09160 /* LocationEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationEngine.swift; sourceTree = "<group>"; };
+		3B51D4F370EFC220A54A082F /* Locus.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Locus.entitlements; sourceTree = "<group>"; };
+		3BD94D8F8EA6E858B7F1C9FF /* DeletedLibraryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletedLibraryItem.swift; sourceTree = "<group>"; };
+		3E1274D15694C6B08506BEA4 /* NamedArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamedArea.swift; sourceTree = "<group>"; };
+		3E3473105232D7062C7C13CE /* RouteEditorViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteEditorViews.swift; sourceTree = "<group>"; };
+		3F5E015669C9CEE3D9826A16 /* ShiftIcon-Porcelain-Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ShiftIcon-Porcelain-Default.png"; sourceTree = "<group>"; };
+		415DCE10A8407A172CE08F1B /* DeveloperLogStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperLogStore.swift; sourceTree = "<group>"; };
+		4186C2C038F48872CE9F18AC /* AppResetRules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppResetRules.swift; sourceTree = "<group>"; };
+		429366C3732ACF4031A7006B /* SetupFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupFlowView.swift; sourceTree = "<group>"; };
+		42E4D5AA160627583B2FA7EC /* AppUpdateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUpdateController.swift; sourceTree = "<group>"; };
+		43445E7F8D796A93E5ADAB7A /* ReliabilityRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReliabilityRecorder.swift; sourceTree = "<group>"; };
+		44E484ACB17C2EC393878D35 /* BackupImportReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupImportReader.swift; sourceTree = "<group>"; };
+		457B7DA9B1C11FE44E73414A /* TripToolsViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripToolsViews.swift; sourceTree = "<group>"; };
+		4AEBE4312C734EA78639D349 /* ConnectionDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionDetailsView.swift; sourceTree = "<group>"; };
+		4E1B61BA68456DDC5EE49522 /* DeveloperLogExportSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperLogExportSection.swift; sourceTree = "<group>"; };
+		4ECD87AA9104250CB4FD0ADA /* BackupImportReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupImportReview.swift; sourceTree = "<group>"; };
+		4F96A1E3D11AA07C1FEBA19B /* LibraryBackupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryBackupView.swift; sourceTree = "<group>"; };
+		524089103C557940B61B26E2 /* LocusActivity.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = LocusActivity.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		5257BB38DCB274930AC15636 /* DeveloperLogObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperLogObserver.swift; sourceTree = "<group>"; };
+		53566F86AF5764FE435FCB77 /* RemoteFindMyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFindMyController.swift; sourceTree = "<group>"; };
+		5415BEF759B8C8AF04096B3E /* BackgroundKeepAlive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundKeepAlive.swift; sourceTree = "<group>"; };
+		559D2EE243F7D87981D80929 /* ProblemReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemReport.swift; sourceTree = "<group>"; };
+		59B349994C31005872E548BA /* LocationVerificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationVerificationController.swift; sourceTree = "<group>"; };
+		59D99C19C471E819E964DC9E /* ShiftIcon-Glacier-Dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ShiftIcon-Glacier-Dark.png"; sourceTree = "<group>"; };
+		5A2EBDE0E2F511864E58FB30 /* AppearanceSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceSettingsView.swift; sourceTree = "<group>"; };
+		5A36736E0B6A65F3D3C79C37 /* StopDurationControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopDurationControl.swift; sourceTree = "<group>"; };
+		5A5E0D0A3E5322B7CD47D752 /* ProblemReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemReportView.swift; sourceTree = "<group>"; };
+		5B0EE6E07F09B45481C8C078 /* ShiftAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftAppearance.swift; sourceTree = "<group>"; };
+		60BC7115B5A2CDF40C094337 /* TripFeatures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripFeatures.swift; sourceTree = "<group>"; };
+		68857E26C7C1D20764C83F51 /* ShiftDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftDesign.swift; sourceTree = "<group>"; };
+		692B6C33198FF2D92C323C6F /* ShiftIcon-Afterhours-Dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ShiftIcon-Afterhours-Dark.png"; sourceTree = "<group>"; };
+		6C9F18048656DF4E07E22A6B /* AppResetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppResetController.swift; sourceTree = "<group>"; };
+		6CB61EF92FC030C75653F126 /* SessionNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionNotifications.swift; sourceTree = "<group>"; };
+		6DF917A85B507FDDCF382E2F /* SilentAudioKeepAlive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SilentAudioKeepAlive.swift; sourceTree = "<group>"; };
+		6EE2D8A6DC6CABFEBABC8BFA /* ShiftIcon-PrismJumpgate-Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ShiftIcon-PrismJumpgate-Default.png"; sourceTree = "<group>"; };
+		6F47A0A9D6C8976B8F4BD39D /* Elsepin-Windows-Helper.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = "Elsepin-Windows-Helper.zip"; sourceTree = "<group>"; };
+		70AF65B15CA38A33654832F2 /* RouteGeometry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteGeometry.swift; sourceTree = "<group>"; };
+		70D366F8BE0AE3454F01106B /* MapPanProjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPanProjection.swift; sourceTree = "<group>"; };
+		7977CA785FF0B09F4F88DE7D /* PairingStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairingStore.swift; sourceTree = "<group>"; };
+		799094E9B1F051BEAD82D2C1 /* SavedPlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPlace.swift; sourceTree = "<group>"; };
+		79FCCBEAAA58F9D9C8789650 /* RemoteFindMyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFindMyView.swift; sourceTree = "<group>"; };
+		7B1A67AF180FD68CD8108DC9 /* UsualSpeedsSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsualSpeedsSettingsView.swift; sourceTree = "<group>"; };
+		7E106657E6978167FA96297C /* BackupImportReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupImportReviewView.swift; sourceTree = "<group>"; };
+		80586905F7D0B0FE4D11D284 /* LocusHomeWidgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocusHomeWidgets.swift; sourceTree = "<group>"; };
+		83EF69C0BB77503740547EBA /* ShiftBrandViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftBrandViews.swift; sourceTree = "<group>"; };
+		85E7E31C6C2C8A3E813BB5B4 /* CompanionClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanionClient.swift; sourceTree = "<group>"; };
+		86C72FDA51C1CDF75424003B /* LocusLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocusLiveActivity.swift; sourceTree = "<group>"; };
+		878B752D334D97C0E689DCA5 /* LocationVerification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationVerification.swift; sourceTree = "<group>"; };
+		883F1619590DB12EDC93DE0E /* SketchMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SketchMapView.swift; sourceTree = "<group>"; };
+		8EA9F9A2A821575AEE768E67 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		8FFBBE77F543F482FE3EC45E /* RoutePlacesEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutePlacesEditor.swift; sourceTree = "<group>"; };
+		90E54F151F7ED15A39BCE62F /* TripLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripLibrary.swift; sourceTree = "<group>"; };
+		91E2EBD3F6F937176E4EC13F /* DeviceTunnel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceTunnel.swift; sourceTree = "<group>"; };
+		933D8770CF0920EC6F496D32 /* AppearancePolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearancePolicy.swift; sourceTree = "<group>"; };
+		947CC969C23E547912106D44 /* HomeWidgetsSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWidgetsSettingsView.swift; sourceTree = "<group>"; };
+		9B55BC0DF9E794550D5B5BDD /* AppResetSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppResetSection.swift; sourceTree = "<group>"; };
+		A143D03C540B6D9BAE457508 /* DeveloperLogRules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperLogRules.swift; sourceTree = "<group>"; };
+		A14B292089EE8477E309C49B /* MapPinAdjustment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPinAdjustment.swift; sourceTree = "<group>"; };
+		A172505BC1A861440C1789DB /* SetupConnectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupConnectionModel.swift; sourceTree = "<group>"; };
+		A2BB3D2CBC94394DCA14D9E9 /* SessionDiagnostics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDiagnostics.swift; sourceTree = "<group>"; };
+		A324B9DEB3CB81C478DB74F6 /* JourneyCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyCard.swift; sourceTree = "<group>"; };
+		A3EEFD7C9CBB6573454A4D0C /* TripRecoveryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripRecoveryStore.swift; sourceTree = "<group>"; };
+		A52F5F3028DC916321054C8B /* ShiftIcon-IonJumpgate-Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ShiftIcon-IonJumpgate-Default.png"; sourceTree = "<group>"; };
+		A5FB1B60FF160F07CD448961 /* SpeedSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedSlider.swift; sourceTree = "<group>"; };
+		A6F82FA6DDE30EAB61C28997 /* SessionTimeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionTimeline.swift; sourceTree = "<group>"; };
+		A85F0AE33D89C621FA820C8D /* RouteEditing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteEditing.swift; sourceTree = "<group>"; };
+		A9DB2686B3B7F7032039FCBD /* AppPrivacyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPrivacyController.swift; sourceTree = "<group>"; };
+		AD401B2BF295561897BDABE6 /* PairableHostAdvertiser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairableHostAdvertiser.swift; sourceTree = "<group>"; };
+		AEFB9A10F8784355D5344D95 /* Locus.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Locus.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1FF25D833D355D0E697D706 /* TravelControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelControls.swift; sourceTree = "<group>"; };
+		BB6D986DE00B91A1CCE8B63D /* CloudServiceChecks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudServiceChecks.swift; sourceTree = "<group>"; };
+		BCE72E7AEE62A49FFB775070 /* RouteContinuation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteContinuation.swift; sourceTree = "<group>"; };
+		BCFA8A386D261B7675FCA268 /* ShiftIcon-Glacier-Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ShiftIcon-Glacier-Default.png"; sourceTree = "<group>"; };
+		BE84038C9223A84BAFFAE233 /* PairOnDeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairOnDeviceView.swift; sourceTree = "<group>"; };
+		BF8EE90480A802F4F8FAF3DF /* ReliabilityRun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReliabilityRun.swift; sourceTree = "<group>"; };
+		BFAD463F53BD704A35A8E65F /* LocalDevVPN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDevVPN.swift; sourceTree = "<group>"; };
+		BFD8A5C1938A71E827E028AD /* ShiftIcon-Porcelain-Tinted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ShiftIcon-Porcelain-Tinted.png"; sourceTree = "<group>"; };
+		C02A1483D99BC43D9CEA739F /* ShiftAppearanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftAppearanceController.swift; sourceTree = "<group>"; };
+		C0C7AE5685A5B9AFC967943E /* FindMyChecksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindMyChecksView.swift; sourceTree = "<group>"; };
+		C6C3F15BC482A2CBF13B1EA6 /* SpoofSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpoofSession.swift; sourceTree = "<group>"; };
+		C6E1E5045502562273943819 /* TripViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripViews.swift; sourceTree = "<group>"; };
+		C9507F778CEA2FED64070A48 /* RoutePlaceSearchSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutePlaceSearchSheet.swift; sourceTree = "<group>"; };
+		CFF6D1EA6EBAAF543339FF81 /* JoystickPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoystickPad.swift; sourceTree = "<group>"; };
+		D38C951707F387D8A69B7E68 /* HomeWidgetPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWidgetPublisher.swift; sourceTree = "<group>"; };
+		D692BBC8E2FE682C8BA3AB17 /* ShiftIcon-Afterhours-Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ShiftIcon-Afterhours-Default.png"; sourceTree = "<group>"; };
+		D76779E56819A74B78236EF1 /* RoutePlannerSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutePlannerSheet.swift; sourceTree = "<group>"; };
+		DA2F2DCBC6F02C8D9C521F37 /* SetupReadiness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupReadiness.swift; sourceTree = "<group>"; };
+		DA3ADD464DDD7D9FF5D5D7EF /* RemoteFindMy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFindMy.swift; sourceTree = "<group>"; };
+		DD6633791CEEE166F46DE060 /* SessionSettingsSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionSettingsSections.swift; sourceTree = "<group>"; };
+		DEF21E70A4FE4DBE84A5AA3A /* ControlInteraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlInteraction.swift; sourceTree = "<group>"; };
+		E2BC5277FD75A01A31B9830D /* PairOnDeviceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairOnDeviceService.swift; sourceTree = "<group>"; };
+		E84E53D1D12F7B0C491FF31A /* Elsepin-FindMy-Cloud.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = "Elsepin-FindMy-Cloud.zip"; sourceTree = "<group>"; };
+		E8ED6CF5245B986B7B59E5E6 /* SpeedUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedUnit.swift; sourceTree = "<group>"; };
+		E9A3B225E362F522681FBF7F /* ShiftIcon-Glacier-Tinted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ShiftIcon-Glacier-Tinted.png"; sourceTree = "<group>"; };
+		E9B1F8BB42741C2A66A43E3A /* TripEditHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripEditHistory.swift; sourceTree = "<group>"; };
+		ED8180F7B25FE93375F67675 /* PrivacySettingsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacySettingsSection.swift; sourceTree = "<group>"; };
+		F00E537F6EB131BFD39960A6 /* RoutePlanning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutePlanning.swift; sourceTree = "<group>"; };
+		F1336AAF929C2DABFB1A8401 /* CompanionLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanionLink.swift; sourceTree = "<group>"; };
+		F2636E9664FC07393C807835 /* DrawnPathEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawnPathEdit.swift; sourceTree = "<group>"; };
+		F4A2FF60E24B6F661AB4E0E4 /* PrivacyRules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyRules.swift; sourceTree = "<group>"; };
+		F707F3D25F78166FFD2C44F6 /* CompanionConnectionIssue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanionConnectionIssue.swift; sourceTree = "<group>"; };
+		F714A23C4C718E67E978565F /* MapHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapHomeView.swift; sourceTree = "<group>"; };
+		FE9BF680256F4FF39E4FECB0 /* idevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = idevice.h; sourceTree = "<group>"; };
+		FF1AF0F32E88B4227CA45694 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		FF1DD2912A1CF707AD15DE40 /* AppearancePresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearancePresentation.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		04819CB404D166B850594890 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				5A2EBDE0E2F511864E58FB30 /* AppearanceSettingsView.swift */,
+				9B55BC0DF9E794550D5B5BDD /* AppResetSection.swift */,
+				0C5542A5B8EA7B4C5273208C /* AppUpdateNotice.swift */,
+				7E106657E6978167FA96297C /* BackupImportReviewView.swift */,
+				4AEBE4312C734EA78639D349 /* ConnectionDetailsView.swift */,
+				4E1B61BA68456DDC5EE49522 /* DeveloperLogExportSection.swift */,
+				C0C7AE5685A5B9AFC967943E /* FindMyChecksView.swift */,
+				947CC969C23E547912106D44 /* HomeWidgetsSettingsView.swift */,
+				4F96A1E3D11AA07C1FEBA19B /* LibraryBackupView.swift */,
+				182A67940FAF35E1D246B8F5 /* NamedAreasView.swift */,
+				BE84038C9223A84BAFFAE233 /* PairOnDeviceView.swift */,
+				ED8180F7B25FE93375F67675 /* PrivacySettingsSection.swift */,
+				5A5E0D0A3E5322B7CD47D752 /* ProblemReportView.swift */,
+				1B252B95495AFCE887718D30 /* RecentlyDeletedView.swift */,
+				79FCCBEAAA58F9D9C8789650 /* RemoteFindMyView.swift */,
+				0EFC4589D2C4CFC55D0EEBB6 /* SavedPlaceEditorSheet.swift */,
+				DD6633791CEEE166F46DE060 /* SessionSettingsSections.swift */,
+				1AC9F12238296CAC6205D98E /* SessionTimelineView.swift */,
+				0E1C1367D937C33DF4F1FBE6 /* SettingsView.swift */,
+				457B7DA9B1C11FE44E73414A /* TripToolsViews.swift */,
+				7B1A67AF180FD68CD8108DC9 /* UsualSpeedsSettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		06A40F4AE45561D4957AE6E5 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				03DE64DA7097F210F1075553 /* LocusApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		1034C21D9930A5F35D463962 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AEFB9A10F8784355D5344D95 /* Locus.app */,
+				524089103C557940B61B26E2 /* LocusActivity.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		23291CD2DE893C55FE7B446B /* idevice */ = {
+			isa = PBXGroup;
+			children = (
+				FE9BF680256F4FF39E4FECB0 /* idevice.h */,
+				21D5BB24B768AA010AB8CD40 /* module.modulemap */,
+			);
+			path = idevice;
+			sourceTree = "<group>";
+		};
+		2C7F6D726AC574C9600B5F9A /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				F714A23C4C718E67E978565F /* MapHomeView.swift */,
+				A14B292089EE8477E309C49B /* MapPinAdjustment.swift */,
+				FF1AF0F32E88B4227CA45694 /* RootView.swift */,
+				883F1619590DB12EDC93DE0E /* SketchMapView.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		36D52643D1CA99DF029BE655 /* Joystick */ = {
+			isa = PBXGroup;
+			children = (
+				CFF6D1EA6EBAAF543339FF81 /* JoystickPad.swift */,
+			);
+			path = Joystick;
+			sourceTree = "<group>";
+		};
+		39D1E1A92FC48FF828B78A3E /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				36D52643D1CA99DF029BE655 /* Joystick */,
+				2C7F6D726AC574C9600B5F9A /* Map */,
+				B8E755C6C753821B2A8E141A /* Routes */,
+				04819CB404D166B850594890 /* Settings */,
+				8A34AD0FBFBBBC1E8E32A474 /* Setup */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		796058090ADB9656F1AC489F = {
+			isa = PBXGroup;
+			children = (
+				B9D7C7183910882434437EA5 /* Locus */,
+				A13CB336C6132FEB4E2FAB05 /* LocusActivity */,
+				FDD87741645CCCED6FC9E227 /* Shared */,
+				A3FB89DD9A662FFEED373A60 /* Vendor */,
+				1034C21D9930A5F35D463962 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8A34AD0FBFBBBC1E8E32A474 /* Setup */ = {
+			isa = PBXGroup;
+			children = (
+				429366C3732ACF4031A7006B /* SetupFlowView.swift */,
+			);
+			path = Setup;
+			sourceTree = "<group>";
+		};
+		96CD48C92E5451EDE0E4FB42 /* IconPreviews */ = {
+			isa = PBXGroup;
+			children = (
+				692B6C33198FF2D92C323C6F /* ShiftIcon-Afterhours-Dark.png */,
+				D692BBC8E2FE682C8BA3AB17 /* ShiftIcon-Afterhours-Default.png */,
+				2E3161B82E2220F968BD5E68 /* ShiftIcon-Afterhours-Tinted.png */,
+				03AF4F87FEC06D13F9C73012 /* ShiftIcon-EmberSwitchpath-Default.png */,
+				59D99C19C471E819E964DC9E /* ShiftIcon-Glacier-Dark.png */,
+				BCFA8A386D261B7675FCA268 /* ShiftIcon-Glacier-Default.png */,
+				E9A3B225E362F522681FBF7F /* ShiftIcon-Glacier-Tinted.png */,
+				A52F5F3028DC916321054C8B /* ShiftIcon-IonJumpgate-Default.png */,
+				0EF838D526D69971952229D6 /* ShiftIcon-Porcelain-Dark.png */,
+				3F5E015669C9CEE3D9826A16 /* ShiftIcon-Porcelain-Default.png */,
+				BFD8A5C1938A71E827E028AD /* ShiftIcon-Porcelain-Tinted.png */,
+				6EE2D8A6DC6CABFEBABC8BFA /* ShiftIcon-PrismJumpgate-Default.png */,
+				1ED9C31EDE1F007D4AB9DB67 /* ShiftIcon-TitaniumJumpgate-Default.png */,
+			);
+			path = IconPreviews;
+			sourceTree = "<group>";
+		};
+		A13CB336C6132FEB4E2FAB05 /* LocusActivity */ = {
+			isa = PBXGroup;
+			children = (
+				1541AFB2DCA2890CD376BEE0 /* LocusActivity.entitlements */,
+				80586905F7D0B0FE4D11D284 /* LocusHomeWidgets.swift */,
+				86C72FDA51C1CDF75424003B /* LocusLiveActivity.swift */,
+			);
+			path = LocusActivity;
+			sourceTree = "<group>";
+		};
+		A3FB89DD9A662FFEED373A60 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				23291CD2DE893C55FE7B446B /* idevice */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		B32582618AEAB100F3C055BD /* Engine */ = {
+			isa = PBXGroup;
+			children = (
+				5415BEF759B8C8AF04096B3E /* BackgroundKeepAlive.swift */,
+				91E2EBD3F6F937176E4EC13F /* DeviceTunnel.swift */,
+				377FB9983B927B5898D09160 /* LocationEngine.swift */,
+				AD401B2BF295561897BDABE6 /* PairableHostAdvertiser.swift */,
+				7977CA785FF0B09F4F88DE7D /* PairingStore.swift */,
+				E2BC5277FD75A01A31B9830D /* PairOnDeviceService.swift */,
+				1FC0C702516F159A7EF6D853 /* RouteBuilder.swift */,
+				BCE72E7AEE62A49FFB775070 /* RouteContinuation.swift */,
+				044F751F81B01D36D37462C1 /* RoutePlanner.swift */,
+				3595D09295BBC9B41EA63C47 /* SessionActivityController.swift */,
+				6CB61EF92FC030C75653F126 /* SessionNotifications.swift */,
+				6DF917A85B507FDDCF382E2F /* SilentAudioKeepAlive.swift */,
+				C6C3F15BC482A2CBF13B1EA6 /* SpoofSession.swift */,
+			);
+			path = Engine;
+			sourceTree = "<group>";
+		};
+		B67E43CBD395C80F3D3345CB /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				FF1DD2912A1CF707AD15DE40 /* AppearancePresentation.swift */,
+				A9DB2686B3B7F7032039FCBD /* AppPrivacyController.swift */,
+				6C9F18048656DF4E07E22A6B /* AppResetController.swift */,
+				42E4D5AA160627583B2FA7EC /* AppUpdateController.swift */,
+				85E7E31C6C2C8A3E813BB5B4 /* CompanionClient.swift */,
+				5257BB38DCB274930AC15636 /* DeveloperLogObserver.swift */,
+				D38C951707F387D8A69B7E68 /* HomeWidgetPublisher.swift */,
+				303411BEB8455BB8C0B2DC04 /* LibraryBackupInput.swift */,
+				BFAD463F53BD704A35A8E65F /* LocalDevVPN.swift */,
+				59B349994C31005872E548BA /* LocationVerificationController.swift */,
+				2E6BE765DFC4FB848609C8AA /* PairingDocumentPicker.swift */,
+				0A8E57ECD2455292570F2EE4 /* RecentlyDeletedStore.swift */,
+				43445E7F8D796A93E5ADAB7A /* ReliabilityRecorder.swift */,
+				53566F86AF5764FE435FCB77 /* RemoteFindMyController.swift */,
+				799094E9B1F051BEAD82D2C1 /* SavedPlace.swift */,
+				A2BB3D2CBC94394DCA14D9E9 /* SessionDiagnostics.swift */,
+				02349A57FCEA9055B18DF2B4 /* SessionPreferences.swift */,
+				A172505BC1A861440C1789DB /* SetupConnectionModel.swift */,
+				C02A1483D99BC43D9CEA739F /* ShiftAppearanceController.swift */,
+				68857E26C7C1D20764C83F51 /* ShiftDesign.swift */,
+				8EA9F9A2A821575AEE768E67 /* Theme.swift */,
+				90E54F151F7ED15A39BCE62F /* TripLibrary.swift */,
+				A3EEFD7C9CBB6573454A4D0C /* TripRecoveryStore.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		B8E755C6C753821B2A8E141A /* Routes */ = {
+			isa = PBXGroup;
+			children = (
+				A324B9DEB3CB81C478DB74F6 /* JourneyCard.swift */,
+				10D7ABCBF4DA1719AF8413A6 /* PathEditorSheet.swift */,
+				3E3473105232D7062C7C13CE /* RouteEditorViews.swift */,
+				C9507F778CEA2FED64070A48 /* RoutePlaceSearchSheet.swift */,
+				8FFBBE77F543F482FE3EC45E /* RoutePlacesEditor.swift */,
+				D76779E56819A74B78236EF1 /* RoutePlannerSheet.swift */,
+				A5FB1B60FF160F07CD448961 /* SpeedSlider.swift */,
+				5A36736E0B6A65F3D3C79C37 /* StopDurationControl.swift */,
+				B1FF25D833D355D0E697D706 /* TravelControls.swift */,
+				353B28A57311709589886541 /* TripEditHistoryView.swift */,
+				C6E1E5045502562273943819 /* TripViews.swift */,
+			);
+			path = Routes;
+			sourceTree = "<group>";
+		};
+		B9D7C7183910882434437EA5 /* Locus */ = {
+			isa = PBXGroup;
+			children = (
+				06A40F4AE45561D4957AE6E5 /* App */,
+				B32582618AEAB100F3C055BD /* Engine */,
+				39D1E1A92FC48FF828B78A3E /* Features */,
+				FA27A5BC6D7A370C663C36F1 /* Resources */,
+				B67E43CBD395C80F3D3345CB /* Support */,
+			);
+			path = Locus;
+			sourceTree = "<group>";
+		};
+		FA27A5BC6D7A370C663C36F1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2D4CA41C622A34E45EF21F54 /* Assets.xcassets */,
+				E84E53D1D12F7B0C491FF31A /* Elsepin-FindMy-Cloud.zip */,
+				6F47A0A9D6C8976B8F4BD39D /* Elsepin-Windows-Helper.zip */,
+				3B51D4F370EFC220A54A082F /* Locus.entitlements */,
+				3091E2487B50AA19913444D0 /* OpenSourceNotices.txt */,
+				96CD48C92E5451EDE0E4FB42 /* IconPreviews */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		FDD87741645CCCED6FC9E227 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				933D8770CF0920EC6F496D32 /* AppearancePolicy.swift */,
+				4186C2C038F48872CE9F18AC /* AppResetRules.swift */,
+				44E484ACB17C2EC393878D35 /* BackupImportReader.swift */,
+				4ECD87AA9104250CB4FD0ADA /* BackupImportReview.swift */,
+				BB6D986DE00B91A1CCE8B63D /* CloudServiceChecks.swift */,
+				F707F3D25F78166FFD2C44F6 /* CompanionConnectionIssue.swift */,
+				F1336AAF929C2DABFB1A8401 /* CompanionLink.swift */,
+				DEF21E70A4FE4DBE84A5AA3A /* ControlInteraction.swift */,
+				3BD94D8F8EA6E858B7F1C9FF /* DeletedLibraryItem.swift */,
+				A143D03C540B6D9BAE457508 /* DeveloperLogRules.swift */,
+				415DCE10A8407A172CE08F1B /* DeveloperLogStore.swift */,
+				F2636E9664FC07393C807835 /* DrawnPathEdit.swift */,
+				0003B2B847A65218388662AE /* LibraryBackup.swift */,
+				878B752D334D97C0E689DCA5 /* LocationVerification.swift */,
+				04F0EE2A5C796AB45A23644A /* LocusActivityAttributes.swift */,
+				70D366F8BE0AE3454F01106B /* MapPanProjection.swift */,
+				3E1274D15694C6B08506BEA4 /* NamedArea.swift */,
+				20A41D09D30E29E7C2B66D6F /* PairingFileImport.swift */,
+				1DB6E14CE9B193FC6CB29828 /* Personalization.swift */,
+				F4A2FF60E24B6F661AB4E0E4 /* PrivacyRules.swift */,
+				559D2EE243F7D87981D80929 /* ProblemReport.swift */,
+				BF8EE90480A802F4F8FAF3DF /* ReliabilityRun.swift */,
+				DA3ADD464DDD7D9FF5D5D7EF /* RemoteFindMy.swift */,
+				A85F0AE33D89C621FA820C8D /* RouteEditing.swift */,
+				70AF65B15CA38A33654832F2 /* RouteGeometry.swift */,
+				0BF205A9DD2450E36A40A6B0 /* RouteLifecycle.swift */,
+				F00E537F6EB131BFD39960A6 /* RoutePlanning.swift */,
+				0A158B3051B3538FA4EA96AC /* SessionPresentation.swift */,
+				A6F82FA6DDE30EAB61C28997 /* SessionTimeline.swift */,
+				DA2F2DCBC6F02C8D9C521F37 /* SetupReadiness.swift */,
+				5B0EE6E07F09B45481C8C078 /* ShiftAppearance.swift */,
+				83EF69C0BB77503740547EBA /* ShiftBrandViews.swift */,
+				E8ED6CF5245B986B7B59E5E6 /* SpeedUnit.swift */,
+				131776EEC49FCFEAC5550854 /* StableReleaseUpdates.swift */,
+				E9B1F8BB42741C2A66A43E3A /* TripEditHistory.swift */,
+				60BC7115B5A2CDF40C094337 /* TripFeatures.swift */,
+				127B67E23500BDAB4F7FD1E6 /* TripRecovery.swift */,
+				188A2CF66A8DE184B0AA4C0F /* WidgetLibrary.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4896638691C4AFF8C4B6701D /* Locus */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 499F5785D4491853643B4C0D /* Build configuration list for PBXNativeTarget "Locus" */;
+			buildPhases = (
+				3D126E6D0964BF8D319384BC /* Sources */,
+				DD475AF090311C77FAF727EA /* Resources */,
+				102D0B6D9EC32A109A2B86EE /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5F5B6049D96CA80CCA43A27B /* PBXTargetDependency */,
+			);
+			name = Locus;
+			packageProductDependencies = (
+			);
+			productName = Locus;
+			productReference = AEFB9A10F8784355D5344D95 /* Locus.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7C9157E61AC5A8B7243827F2 /* LocusActivity */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 54B2155BDA225B74423C49DB /* Build configuration list for PBXNativeTarget "LocusActivity" */;
+			buildPhases = (
+				D0FEE29AA552E2B4691DB94D /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LocusActivity;
+			packageProductDependencies = (
+			);
+			productName = LocusActivity;
+			productReference = 524089103C557940B61B26E2 /* LocusActivity.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EB04EC8B4299D1D64DC4EDE5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 2700;
+				TargetAttributes = {
+					4896638691C4AFF8C4B6701D = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+					7C9157E61AC5A8B7243827F2 = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = E114DA24E8222F8A31A01840 /* Build configuration list for PBXProject "Locus" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 796058090ADB9656F1AC489F;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 1034C21D9930A5F35D463962 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4896638691C4AFF8C4B6701D /* Locus */,
+				7C9157E61AC5A8B7243827F2 /* LocusActivity */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DD475AF090311C77FAF727EA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74A5BCF6953128864737A070 /* Assets.xcassets in Resources */,
+				CCF65F4770185F2F135A6860 /* Elsepin-FindMy-Cloud.zip in Resources */,
+				D88CEC476C11B3D427E703F2 /* Elsepin-Windows-Helper.zip in Resources */,
+				793C6285BDE959495B7EECAE /* OpenSourceNotices.txt in Resources */,
+				2874C287F08D0BD9044452D3 /* ShiftIcon-Afterhours-Dark.png in Resources */,
+				29B86A73B4641FBDB3B30A20 /* ShiftIcon-Afterhours-Default.png in Resources */,
+				620D88DDF9D05C75B2F70E0A /* ShiftIcon-Afterhours-Tinted.png in Resources */,
+				442D9109FA3234FA35E1D681 /* ShiftIcon-EmberSwitchpath-Default.png in Resources */,
+				655500CB4E992C87AEC73A23 /* ShiftIcon-Glacier-Dark.png in Resources */,
+				539DBE6DBAECA0E310EE1524 /* ShiftIcon-Glacier-Default.png in Resources */,
+				87D85E5112091E74DB2D9902 /* ShiftIcon-Glacier-Tinted.png in Resources */,
+				DEEF68D96347B442FEF10ECC /* ShiftIcon-IonJumpgate-Default.png in Resources */,
+				E5BE2C78B366076D498E0E1C /* ShiftIcon-Porcelain-Dark.png in Resources */,
+				E54C5DFBAA0EC98B164E0743 /* ShiftIcon-Porcelain-Default.png in Resources */,
+				9BF2AC270A11F1006C44BC46 /* ShiftIcon-Porcelain-Tinted.png in Resources */,
+				5ED15F3A789A2EBC5138DE02 /* ShiftIcon-PrismJumpgate-Default.png in Resources */,
+				89E2A58410B3D535A5B6D9A9 /* ShiftIcon-TitaniumJumpgate-Default.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3D126E6D0964BF8D319384BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD1070A046FF5379BAB24529 /* AppPrivacyController.swift in Sources */,
+				EF903819D396B3E04B69B5BA /* AppResetController.swift in Sources */,
+				C8FAE1F7E9754DA5FBCB9875 /* AppResetRules.swift in Sources */,
+				82EF75632DB9268BBB2531C7 /* AppResetSection.swift in Sources */,
+				CEE11DC237712E91963C8230 /* AppUpdateController.swift in Sources */,
+				E72F87ED28E3A73F0FB14260 /* AppUpdateNotice.swift in Sources */,
+				DF8F89F497F80428BDD92417 /* AppearancePolicy.swift in Sources */,
+				36C7F25072E2F5B3794B06BE /* AppearancePresentation.swift in Sources */,
+				2BC48E538BD29CA6B611F586 /* AppearanceSettingsView.swift in Sources */,
+				C5B176B29163E524B776757A /* BackgroundKeepAlive.swift in Sources */,
+				BEC944FAD9A9FF0A756B6D0C /* BackupImportReader.swift in Sources */,
+				26F0290A8D8B56361E001FEF /* BackupImportReview.swift in Sources */,
+				83957B2E5ED3277AD1660D53 /* BackupImportReviewView.swift in Sources */,
+				4CB13A425BE3ABBB7E8F3FAE /* CloudServiceChecks.swift in Sources */,
+				745BDDCD6CECE6B3C21EF6A5 /* CompanionClient.swift in Sources */,
+				06FCD5136FBBD9709E60B843 /* CompanionConnectionIssue.swift in Sources */,
+				8BAFF417C05B16738FA03B63 /* CompanionLink.swift in Sources */,
+				A266F5D2BC2238E782817B45 /* ConnectionDetailsView.swift in Sources */,
+				A0A01E02BA9812CAEA11A8A5 /* ControlInteraction.swift in Sources */,
+				5F0D5D66287706B5C327CFCA /* DeletedLibraryItem.swift in Sources */,
+				BE9992BCE75347B60FA56BC7 /* DeveloperLogExportSection.swift in Sources */,
+				433035331ABD4F4A57704874 /* DeveloperLogObserver.swift in Sources */,
+				D49B4617C4797076F2CEC2BC /* DeveloperLogRules.swift in Sources */,
+				B62E25F5A2721EEAC25B9661 /* DeveloperLogStore.swift in Sources */,
+				4A19A245C3B57EB4E5B02CDE /* DeviceTunnel.swift in Sources */,
+				26ED568EC7F11922D52B2276 /* DrawnPathEdit.swift in Sources */,
+				1CB4C8E7168D45C2762E90ED /* FindMyChecksView.swift in Sources */,
+				A787753B799400FE26FE922E /* HomeWidgetPublisher.swift in Sources */,
+				0441B00E73D79F0C013281A1 /* HomeWidgetsSettingsView.swift in Sources */,
+				490981C7F60C3CC52E7D907F /* JourneyCard.swift in Sources */,
+				AB35A419877FF9CA0B4AB114 /* JoystickPad.swift in Sources */,
+				2F817EA5AC811395FCEED7AC /* LibraryBackup.swift in Sources */,
+				EE3B62A64B69EE7C79485BEB /* LibraryBackupInput.swift in Sources */,
+				F9F23C522657CE7A41CD289C /* LibraryBackupView.swift in Sources */,
+				824D08C2AC8FD477F58DE51F /* LocalDevVPN.swift in Sources */,
+				DA2B8023B167C95C2A034C47 /* LocationEngine.swift in Sources */,
+				99F0DC40752A6B5287025B5C /* LocationVerification.swift in Sources */,
+				D5163A324DC7D4DE24789358 /* LocationVerificationController.swift in Sources */,
+				680B3D533AB91FDE6062EF11 /* LocusActivityAttributes.swift in Sources */,
+				976D8B4B49C6B6588EA59B2F /* LocusApp.swift in Sources */,
+				D5613248D3DDD96C0D62BF7F /* MapHomeView.swift in Sources */,
+				0143B2D35D24714001ACC7DD /* MapPanProjection.swift in Sources */,
+				A985794530D021807424304C /* MapPinAdjustment.swift in Sources */,
+				BFDB8EB84516C11B9A1EDF76 /* NamedArea.swift in Sources */,
+				D75F341BE7B8F5F6E17C0E96 /* NamedAreasView.swift in Sources */,
+				41622C4D112CF14318210A71 /* PairOnDeviceService.swift in Sources */,
+				0C78ABD1E0B70A0732F7EE2F /* PairOnDeviceView.swift in Sources */,
+				83D63478BF012E572D329843 /* PairableHostAdvertiser.swift in Sources */,
+				2D719677D77D851D73D2BA60 /* PairingDocumentPicker.swift in Sources */,
+				86805385C6AB7924240FE553 /* PairingFileImport.swift in Sources */,
+				AC1BBA0F82E89EB56800992E /* PairingStore.swift in Sources */,
+				EF53D2FA159D5EFA6DA439C5 /* PathEditorSheet.swift in Sources */,
+				846CE98C2AF5DDBA5A8628EE /* Personalization.swift in Sources */,
+				399A22DC83AABC7682CFAF06 /* PrivacyRules.swift in Sources */,
+				C5583445C0C1EE0E16D5D62B /* PrivacySettingsSection.swift in Sources */,
+				D4418BE8EA5E7026E5C8EBF4 /* ProblemReport.swift in Sources */,
+				ED6B0A63D06D18C5E23A12F5 /* ProblemReportView.swift in Sources */,
+				396045390C20B141302E67BE /* RecentlyDeletedStore.swift in Sources */,
+				1BAB0E5E93B3D8E1E18F1BB5 /* RecentlyDeletedView.swift in Sources */,
+				14C4350C1EAE94A55D5F068F /* ReliabilityRecorder.swift in Sources */,
+				8497CAF78733455CBF01CD35 /* ReliabilityRun.swift in Sources */,
+				6CDD03B250A31190B617761A /* RemoteFindMy.swift in Sources */,
+				7F98170C9B8BB329DC38CEAB /* RemoteFindMyController.swift in Sources */,
+				CC123836D602137CA97D210E /* RemoteFindMyView.swift in Sources */,
+				B10A777C5622EE884A890643 /* RootView.swift in Sources */,
+				8EAFB147F0F0E2AAE207D276 /* RouteBuilder.swift in Sources */,
+				74E8D982368E318891C93BB0 /* RouteContinuation.swift in Sources */,
+				58A92C97FFF20434E2FA3C0C /* RouteEditing.swift in Sources */,
+				AD4E0E99C597E881AF4ACFE5 /* RouteEditorViews.swift in Sources */,
+				D657D193DD4E6C718D545ED3 /* RouteGeometry.swift in Sources */,
+				582C1B41F15123F32D851373 /* RouteLifecycle.swift in Sources */,
+				ADA2D143DFB61E5EE05062D6 /* RoutePlaceSearchSheet.swift in Sources */,
+				31193DACDC9D36F80258F513 /* RoutePlacesEditor.swift in Sources */,
+				601F3CA02CB336A0AD3892FC /* RoutePlanner.swift in Sources */,
+				87B0D41458D6AF0D39C9AAA4 /* RoutePlannerSheet.swift in Sources */,
+				9CBC91D16F68226569C30B3F /* RoutePlanning.swift in Sources */,
+				3F84179EF76E8AA074797361 /* SavedPlace.swift in Sources */,
+				C3F792D45FFF6DDABD63EAC0 /* SavedPlaceEditorSheet.swift in Sources */,
+				58239C4A77C949F92872F9E7 /* SessionActivityController.swift in Sources */,
+				8E1F3EBF4EE5148D59CE3BC3 /* SessionDiagnostics.swift in Sources */,
+				432D13A17BCD5CA32C4D6FB9 /* SessionNotifications.swift in Sources */,
+				24ABFCE50CC89E42AD09AEA4 /* SessionPreferences.swift in Sources */,
+				1406A639F1123470ED211365 /* SessionPresentation.swift in Sources */,
+				82F641876B7862525B4C1A18 /* SessionSettingsSections.swift in Sources */,
+				A14E1492860C0A17506BF93F /* SessionTimeline.swift in Sources */,
+				9555DF042AC5235880AF8DE6 /* SessionTimelineView.swift in Sources */,
+				39FCB8C0E7050B9161E600C6 /* SettingsView.swift in Sources */,
+				E0AA71976B0B02C723E85A5E /* SetupConnectionModel.swift in Sources */,
+				F42C461AA339262E17E26A10 /* SetupFlowView.swift in Sources */,
+				BFF69AD8D496CAFD3549112A /* SetupReadiness.swift in Sources */,
+				A2CE8D262A4EA2342CC131B7 /* ShiftAppearance.swift in Sources */,
+				AEA6AA7E64F6F6A7F0EE69B5 /* ShiftAppearanceController.swift in Sources */,
+				AC757C94DD58DFCBE8CFB719 /* ShiftBrandViews.swift in Sources */,
+				5F5AE605D86838979230045F /* ShiftDesign.swift in Sources */,
+				F8A8DEF1249AB260C4FF901A /* SilentAudioKeepAlive.swift in Sources */,
+				F8EC4A2B72AD0C2DA5079479 /* SketchMapView.swift in Sources */,
+				E31A698C0CF8B0A5A6715AC1 /* SpeedSlider.swift in Sources */,
+				EF6F12D3652938E68D9E3F2B /* SpeedUnit.swift in Sources */,
+				EA7795A0D36F3F0AFA464944 /* SpoofSession.swift in Sources */,
+				3F60C27B1FBD26E98A6179EA /* StableReleaseUpdates.swift in Sources */,
+				B6C07F371E6CE44D2953EDE1 /* StopDurationControl.swift in Sources */,
+				1CBCD6A08AA473AB0CB526CA /* Theme.swift in Sources */,
+				A01C61E25CE3E3509BD6D58D /* TravelControls.swift in Sources */,
+				41C4D3FD075B16CC02347EE5 /* TripEditHistory.swift in Sources */,
+				4F187CF5DCE279FC4E2C0C0A /* TripEditHistoryView.swift in Sources */,
+				F0F463B69550D04C26071502 /* TripFeatures.swift in Sources */,
+				B6968D400DACADE3AA2793BF /* TripLibrary.swift in Sources */,
+				F4128F71D1ED444EA88786C9 /* TripRecovery.swift in Sources */,
+				7F5E933D8E67C95DBE210357 /* TripRecoveryStore.swift in Sources */,
+				BB121B5C163480670AA7768D /* TripToolsViews.swift in Sources */,
+				9DDA3DBC8A1C927466FE7ECA /* TripViews.swift in Sources */,
+				6B4B90556540530521194E93 /* UsualSpeedsSettingsView.swift in Sources */,
+				2164BBFF9D17060ACE80D7E4 /* WidgetLibrary.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0FEE29AA552E2B4691DB94D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20EC807D442DA3E48DEB112F /* AppResetRules.swift in Sources */,
+				BFDD797F5F7B0DB70D5A7A8E /* AppearancePolicy.swift in Sources */,
+				72AACD0C27F51401B3BE7131 /* BackupImportReader.swift in Sources */,
+				ACCF3937D67385B4EBEBD75B /* BackupImportReview.swift in Sources */,
+				92D539FFAE67D9DBF64D00B8 /* CloudServiceChecks.swift in Sources */,
+				B2F80FD073C071D2F5AC0FEC /* CompanionConnectionIssue.swift in Sources */,
+				58AACEA7AD5BB8D869FD8F4B /* CompanionLink.swift in Sources */,
+				544715AB8B371AB302FF7648 /* ControlInteraction.swift in Sources */,
+				5CBC25E323347BD06E8DADD4 /* DeletedLibraryItem.swift in Sources */,
+				0C54FFE80073DEE59C1608D5 /* DeveloperLogRules.swift in Sources */,
+				FC308F675F36E8BFEC3D6A4F /* DeveloperLogStore.swift in Sources */,
+				1C92AD5A5709778B982A4043 /* DrawnPathEdit.swift in Sources */,
+				2ED1A52DF1FB998D0BAB29E4 /* LibraryBackup.swift in Sources */,
+				02B50409EF1B982B998CE002 /* LocationVerification.swift in Sources */,
+				4D8AE1F6CBFF14C0E8910820 /* LocusActivityAttributes.swift in Sources */,
+				BFB13BD2D6A9C4793E8C1493 /* LocusHomeWidgets.swift in Sources */,
+				C56A1B32D54A05D72CD0F399 /* LocusLiveActivity.swift in Sources */,
+				402AB330448B064A39DDE68A /* MapPanProjection.swift in Sources */,
+				212A9E8904044EF3447E662A /* NamedArea.swift in Sources */,
+				6493D5144A614759442872EA /* PairingFileImport.swift in Sources */,
+				97BFCD4BD2EAE20D6742DACC /* Personalization.swift in Sources */,
+				0B4BE39693C99BEFBCE2A1AD /* PrivacyRules.swift in Sources */,
+				228A61981317AEC4BFAC4FAE /* ProblemReport.swift in Sources */,
+				A06F936021A2EEE209695227 /* ReliabilityRun.swift in Sources */,
+				B08D36E269071BAA44757D69 /* RemoteFindMy.swift in Sources */,
+				23D95ED8AA45ED64000C728A /* RouteEditing.swift in Sources */,
+				EF32B74BF6B2E74B17569F80 /* RouteGeometry.swift in Sources */,
+				CB6D796581DF0C8BFEDEBD8D /* RouteLifecycle.swift in Sources */,
+				34A3391A5F5CD17DF9B8316B /* RoutePlanning.swift in Sources */,
+				467EF0429DA1A464CAD000F0 /* SessionPresentation.swift in Sources */,
+				06ABEA1F92E21CF9F4E8ECB7 /* SessionTimeline.swift in Sources */,
+				8F49E8F88A9290D1A9772D38 /* SetupReadiness.swift in Sources */,
+				AD898DE83698134B79595F2C /* ShiftAppearance.swift in Sources */,
+				FF19419AB0B32A95D7784D0A /* ShiftBrandViews.swift in Sources */,
+				7F558E139421E4F31E612721 /* SpeedUnit.swift in Sources */,
+				A53617A148703669B9C500AE /* StableReleaseUpdates.swift in Sources */,
+				271E1FB5B2E47FB4D87231F4 /* TripEditHistory.swift in Sources */,
+				0841717F13F22A7A0D261C6B /* TripFeatures.swift in Sources */,
+				1C6F28ACEE784EFFBC658667 /* TripRecovery.swift in Sources */,
+				EF820AEF5D0E563A24EA6929 /* WidgetLibrary.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5F5B6049D96CA80CCA43A27B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7C9157E61AC5A8B7243827F2 /* LocusActivity */;
+			targetProxy = 6C8A3A795A6AD04AFDB8685D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		28BC1FD1E1ADCF31A64625B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		488A23B292362AB4158C1D06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = LocusActivity/LocusActivity.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 59;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = LocusActivity/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MARKETING_VERSION = 2.6.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.n3mostudio.shift.activity;
+				PRODUCT_NAME = LocusActivity;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		7FE184EA7F574C71EE5B684D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = "AppIcon AppIconGlacierDark AppIconGlacierTinted AppIconAfterhours AppIconAfterhoursDark AppIconAfterhoursTinted AppIconPorcelain AppIconPorcelainDark AppIconPorcelainTinted AppIconIonJumpgate AppIconTitaniumJumpgate AppIconEmberSwitchpath";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconPrismJumpgate;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = Locus/Resources/Locus.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 59;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_BITCODE = NO;
+				GENERATE_INFOPLIST_FILE = NO;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Vendor/idevice";
+				INFOPLIST_FILE = Locus/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Vendor/idevice",
+				);
+				MARKETING_VERSION = 2.6.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-lidevice_ffi",
+					"-lc++",
+					"-lz",
+				);
+				"OTHER_LDFLAGS[sdk=iphoneos*]" = (
+					"$(inherited)",
+					"-lidevice_ffi",
+					"-lc++",
+					"-lz",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.n3mostudio.shift;
+				PRODUCT_NAME = Locus;
+				SDKROOT = iphoneos;
+				SHIFT_RELEASE_CHANNEL = prerelease;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_INCLUDE_PATHS = "$(PROJECT_DIR)/Vendor/idevice";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		84AFC95581D9EC74FDAEDA17 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = LocusActivity/LocusActivity.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 59;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = LocusActivity/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MARKETING_VERSION = 2.6.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.n3mostudio.shift.activity;
+				PRODUCT_NAME = LocusActivity;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		99E7112DC3789C83E2A09317 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EC219525ECF2D2F87B9312BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = "AppIcon AppIconGlacierDark AppIconGlacierTinted AppIconAfterhours AppIconAfterhoursDark AppIconAfterhoursTinted AppIconPorcelain AppIconPorcelainDark AppIconPorcelainTinted AppIconIonJumpgate AppIconTitaniumJumpgate AppIconEmberSwitchpath";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconPrismJumpgate;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = Locus/Resources/Locus.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 59;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_BITCODE = NO;
+				GENERATE_INFOPLIST_FILE = NO;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Vendor/idevice";
+				INFOPLIST_FILE = Locus/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Vendor/idevice",
+				);
+				MARKETING_VERSION = 2.6.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-lidevice_ffi",
+					"-lc++",
+					"-lz",
+				);
+				"OTHER_LDFLAGS[sdk=iphoneos*]" = (
+					"$(inherited)",
+					"-lidevice_ffi",
+					"-lc++",
+					"-lz",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.n3mostudio.shift;
+				PRODUCT_NAME = Locus;
+				SDKROOT = iphoneos;
+				SHIFT_RELEASE_CHANNEL = prerelease;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_INCLUDE_PATHS = "$(PROJECT_DIR)/Vendor/idevice";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		499F5785D4491853643B4C0D /* Build configuration list for PBXNativeTarget "Locus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC219525ECF2D2F87B9312BB /* Debug */,
+				7FE184EA7F574C71EE5B684D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		54B2155BDA225B74423C49DB /* Build configuration list for PBXNativeTarget "LocusActivity" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84AFC95581D9EC74FDAEDA17 /* Debug */,
+				488A23B292362AB4158C1D06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		E114DA24E8222F8A31A01840 /* Build configuration list for PBXProject "Locus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				99E7112DC3789C83E2A09317 /* Debug */,
+				28BC1FD1E1ADCF31A64625B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EB04EC8B4299D1D64DC4EDE5 /* Project object */;
+}
