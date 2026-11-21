@@ -33,8 +33,14 @@ jobs:
 
       - name: Build and package unsigned IPA
         run: |
-          set -o pipefail
+          set -euo pipefail
+          set +e
           bash scripts/build-ipa.sh 2>&1 | tee build/ipa-build.log
+          status=${PIPESTATUS[0]}
+          set -e
+          echo "build-ipa.sh exited with status $status"
+          ls -lh build/*.ipa || true
+          exit "$status"
 
       - name: Inspect packaged IPA
         run: |
