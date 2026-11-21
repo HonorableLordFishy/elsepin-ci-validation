@@ -1,0 +1,380 @@
+import Foundation
+import idevice
+
+/// Stops later probe stages and ignores a late response. A synchronous vendor
+/// call already in progress cannot be interrupted safely from another thread.
+final class SetupConnectionCancellation: @unchecked Sendable {
+    private let lock = NSLock()
+    private var cancelled = false
+    var isCancelled: Bool {
+        lock.lock()
+        defer { lock.unlock() }
+        return cancelled
+    }
+    func cancel() {
+        lock.lock()
+        cancelled = true
+        lock.unlock()
+    }
+}
+
+enum LocationEngineError: LocalizedError {
+    case invalidIP
+    case pairingRead
+    case tunnelCreate
+    case remoteServer
+    case simulationCreate
+    case locationSet
+    case locationClear
+    case notActive
+    case tunnelUnreachable
+    case evidenceStorage
+
+    var failedBeforeWrite: Bool {
+        switch self {
+        case .invalidIP, .pairingRead, .tunnelCreate, .remoteServer, .simulationCreate, .notActive, .tunnelUnreachable, .evidenceStorage: return true
+        case .locationSet, .locationClear: return false
+        }
+    }
+
+    var errorDescription: String? {
+        switch self {
+        case .invalidIP: return "Tunnel IP is invalid. Check Settings → Tunnel IP (usually 10.7.0.1)."
+        case .pairingRead: return "Could not read the RPPairing file. Generate one with idevice_pair in RPPairing mode."
+        case .tunnelCreate: return "Could not open a new developer connection. A fresh connection needs Wi-Fi and LocalDevVPN. An existing connection can keep working after Wi-Fi disconnects."
+        case .remoteServer: return "Connected to the tunnel but RemoteXPC handshake failed."
+        case .simulationCreate: return "Could not open Apple’s location simulation service."
+        case .locationSet: return "Failed to set simulated coordinates."
+        case .locationClear: return "Failed to clear simulated location."
+        case .notActive: return "No active simulation session."
+        case .tunnelUnreachable: return "The developer connection is unreachable. Turn on LocalDevVPN and try again."
+        case .evidenceStorage: return "Elsepin couldn't save recovery state. Check free storage and try again. No new location was sent."
+        }
+    }
+
+    static func from(code: Int32) -> LocationEngineError {
+        switch code {
+        case 1: return .invalidIP
+        case 2: return .pairingRead
+        case 3: return .tunnelCreate
+        case 9: return .remoteServer
+        case 10: return .simulationCreate
+        case 11: return .locationSet
+        case 12: return .locationClear
+        case 13: return .notActive
+        case 14: return .evidenceStorage
+        default: return .locationSet
+        }
+    }
+}
+
+/// Thin Swift wrapper around idevice’s DVT location simulation (injects into locationd).
+enum LocationEngine {
+    private static let queue = DispatchQueue(label: "com.n3mostudio.shift.location", qos: .userInitiated)
+    private static let setupQueue = DispatchQueue(label: "com.n3mostudio.shift.setup-check", qos: .userInitiated)
+    private static let setupLock = NSLock()
+    private static var setupCheckRunning = false
+    static var setupCheckIsRunning: Bool {
+        setupLock.lock(); defer { setupLock.unlock() }
+        return setupCheckRunning
+    }
+
+    private static var adapter: OpaquePointer?
+    private static var handshake: OpaquePointer?
+    private static var remoteServer: OpaquePointer?
+    private static var locationSimulation: OpaquePointer?
+    private static var probeEndpoint: String?
+    private static var probeCheckedAt: TimeInterval?
+
+    private static let ok: Int32 = 0
+    private static let invalidIP: Int32 = 1
+    private static let pairingRead: Int32 = 2
+    private static let tunnelCreate: Int32 = 3
+    private static let remoteServerCode: Int32 = 9
+    private static let simulationCreate: Int32 = 10
+    private static let locationSet: Int32 = 11
+    private static let locationClear: Int32 = 12
+    private static let terminating: Int32 = 13
+
+    private static func logError(_ error: UnsafeMutablePointer<IdeviceFfiError>, stage: String) {
+        DeveloperLogStore.shared.record("engine_error", ["stage": stage,
+            "code": String(error.pointee.code), "sub_code": String(error.pointee.sub_code)])
+        // The vendor's free-form message may include connection details. Keep
+        // numeric diagnostics only and never read pairing contents into the log.
+    }
+
+    /// Opens an independent developer connection and closes its handles. Never
+    /// sends a coordinate, clears simulation, or uses cached session handles.
+    /// Callers must reject checks while any location session exists.
+    static func checkConnection(pairingPath: String, deviceIP: String,
+                                cancellation: SetupConnectionCancellation) async -> SetupIssue? {
+        guard reserveSetupCheck() else { return .previousCheckRunning }
+        return await withCheckedContinuation { continuation in
+            setupQueue.async {
+                let issue = probeConnection(pairingPath: pairingPath, deviceIP: deviceIP, cancellation: cancellation)
+                releaseSetupCheck()
+                continuation.resume(returning: issue)
+            }
+        }
+    }
+
+    private static func reserveSetupCheck() -> Bool {
+        setupLock.lock()
+        defer { setupLock.unlock() }
+        guard !setupCheckRunning else { return false }
+        setupCheckRunning = true
+        return true
+    }
+
+    private static func releaseSetupCheck() {
+        setupLock.lock()
+        setupCheckRunning = false
+        setupLock.unlock()
+    }
+
+    private static func probeConnection(pairingPath: String, deviceIP: String,
+                                         cancellation: SetupConnectionCancellation) -> SetupIssue? {
+        guard !cancellation.isCancelled else { return .cancelled }
+        var address = sockaddr_in()
+        address.sin_family = sa_family_t(AF_INET)
+        address.sin_port = in_port_t(49152).bigEndian
+        guard deviceIP.withCString({ inet_pton(AF_INET, $0, &address.sin_addr) }) == 1 else { return .invalidAddress }
+
+        var pairingHandle: OpaquePointer?
+        if let error = pairingPath.withCString({ rp_pairing_file_read($0, &pairingHandle) }) {
+            idevice_error_free(error)
+            return .pairingRejected
+        }
+        guard let pairingHandle else { return .pairingRejected }
+        defer { rp_pairing_file_free(pairingHandle) }
+
+        var probeAdapter: OpaquePointer?
+        var probeHandshake: OpaquePointer?
+        var probeServer: OpaquePointer?
+        defer {
+            if let probeServer { remote_server_free(probeServer) }
+            if let probeHandshake { rsd_handshake_free(probeHandshake) }
+            if let probeAdapter { adapter_free(probeAdapter) }
+        }
+        guard !cancellation.isCancelled else { return .cancelled }
+        guard DeveloperTunnelProbe.reaches(deviceIP) else { return .tunnelUnavailable }
+        guard !cancellation.isCancelled else { return .cancelled }
+        let providerError = withUnsafePointer(to: &address) { pointer in
+            pointer.withMemoryRebound(to: sockaddr.self, capacity: 1) {
+                tunnel_create_rppairing($0, socklen_t(MemoryLayout<sockaddr_in>.stride), "ElsepinSetupCheck",
+                    pairingHandle, nil, nil, &probeAdapter, &probeHandshake)
+            }
+        }
+        if let providerError {
+            idevice_error_free(providerError)
+            return .tunnelUnavailable
+        }
+        guard !cancellation.isCancelled else { return .cancelled }
+        if let error = remote_server_connect_rsd(probeAdapter, probeHandshake, &probeServer) {
+            idevice_error_free(error)
+            return .serviceUnavailable
+        }
+        guard !cancellation.isCancelled else { return .cancelled }
+        return probeServer == nil ? .serviceUnavailable : nil
+    }
+
+    static func set(latitude: Double, longitude: Double, pairingPath: String, deviceIP: String,
+                    explicit: Bool = false, checkInterval: TimeInterval = 10) async -> Result<Void, LocationEngineError> {
+        await withCheckedContinuation { continuation in
+            queue.async {
+                // A successful TCP connect does not validate a cached DVT
+                // service after a VPN change. Explicit actions must handshake
+                // again; continuous playback retains its working connection.
+                if explicit { cleanup() }
+                guard validateTunnel(deviceIP, explicit: explicit, interval: checkInterval) else {
+                    continuation.resume(returning: .failure(.tunnelUnreachable)); return
+                }
+                let code = setLocked(latitude: latitude, longitude: longitude, pairingPath: pairingPath, deviceIP: deviceIP)
+                let result: Result<Void, LocationEngineError> = code == ok ? .success(()) : .failure(.from(code: code))
+                continuation.resume(returning: result)
+            }
+        }
+    }
+
+    static func clear(pairingPath: String, deviceIP: String) async -> Result<Void, LocationEngineError> {
+        await withCheckedContinuation { continuation in
+            queue.async {
+                guard SessionLifetime.shared.acceptsCommands else {
+                    continuation.resume(returning: .failure(.notActive))
+                    return
+                }
+                // A canceled initial check never reached the native write.
+                // Queue ordering proves this only when no durable write marker
+                // exists. Never infer that a previous process cleared itself.
+                guard SessionLifetime.shared.previousLocationMayRemain else {
+                    cleanup()
+                    DeveloperLogStore.shared.record("clear_not_needed", ["reason": "no_native_write_attempt"])
+                    continuation.resume(returning: .success(())); return
+                }
+                cleanup() // Stop must not trust a stale cached service either.
+                guard validateTunnel(deviceIP, explicit: true) else {
+                    continuation.resume(returning: .failure(.tunnelUnreachable)); return
+                }
+                // Reopen the service after a failure so Stop can still clear a
+                // simulation. Clearing must not set a new coordinate first.
+                let connectionCode = connectLocked(pairingPath: pairingPath, deviceIP: deviceIP)
+                let code = connectionCode == ok ? clearLocked() : connectionCode
+                let result: Result<Void, LocationEngineError> = code == ok ? .success(()) : .failure(.from(code: code))
+                continuation.resume(returning: result)
+            }
+        }
+    }
+
+    /// Best effort only: no fresh connection, main-thread wait or force-kill guarantee.
+    /// Closing the gate immediately prevents queued writes from reopening simulation.
+    static func prepareForTermination() {
+        guard SessionLifetime.shared.beginTermination() else { return }
+        queue.async {
+            guard locationSimulation != nil else {
+                DeveloperLogStore.shared.record("termination_clear_unavailable", ["reason": "no_live_handle"])
+                DeveloperLogStore.shared.maintenance(flush: true)
+                return
+            }
+            let code = clearLocked()
+            if code == ok { SessionLifetime.shared.locationCleared() }
+            DeveloperLogStore.shared.record("termination_clear_result", ["result": code == ok ? "accepted" : "failed"])
+            DeveloperLogStore.shared.maintenance(flush: true)
+        }
+    }
+
+    private static func cleanup() {
+        probeCheckedAt = nil
+        probeEndpoint = nil
+        if let locationSimulation {
+            location_simulation_free(locationSimulation)
+            self.locationSimulation = nil
+        }
+        if let remoteServer {
+            remote_server_free(remoteServer)
+            self.remoteServer = nil
+        }
+        if let handshake {
+            rsd_handshake_free(handshake)
+            self.handshake = nil
+        }
+        if let adapter {
+            adapter_free(adapter)
+            self.adapter = nil
+        }
+    }
+
+    /// Invalidate only the liveness hint; don't tear down a working route connection.
+    static func invalidateProbe() {
+        queue.async {
+            probeCheckedAt = nil
+            probeEndpoint = nil
+        }
+    }
+
+    private static func validateTunnel(_ ip: String, explicit: Bool, interval: TimeInterval = 10) -> Bool {
+        let now = ProcessInfo.processInfo.systemUptime
+        guard ConnectionProbePolicy.needsProbe(explicit: explicit, endpoint: ip,
+            previousEndpoint: probeEndpoint, checkedAt: probeCheckedAt, now: now, interval: interval) else { return true }
+        let reachable = DeveloperTunnelProbe.reaches(ip)
+        DeveloperLogStore.shared.record("developer_endpoint_check", ["reachable": String(reachable),
+            "explicit": String(explicit), "duration_ms": String(Int((ProcessInfo.processInfo.systemUptime - now) * 1000))])
+        if reachable { probeEndpoint = ip; probeCheckedAt = ProcessInfo.processInfo.systemUptime }
+        else { probeEndpoint = nil; probeCheckedAt = nil }
+        return reachable
+    }
+
+    private static func setLocked(latitude: Double, longitude: Double, pairingPath: String, deviceIP: String) -> Int32 {
+        guard SessionLifetime.shared.acceptsCommands else { return terminating }
+        let code = connectLocked(pairingPath: pairingPath, deviceIP: deviceIP)
+        guard code == ok, let locationSimulation else { return code == ok ? simulationCreate : code }
+        // A termination request can arrive while opening the connection.
+        guard SessionLifetime.shared.acceptsCommands else { return terminating }
+        // Persist immediately before the first operation that can change the
+        // device. An exit during mere connection setup creates no false warning.
+        guard SessionLifetime.shared.locationMayRemain() else {
+            DeveloperLogStore.shared.record("engine_recovery_marker_failed")
+            cleanup()
+            return 14
+        }
+        if let err = location_simulation_set(locationSimulation, latitude, longitude) {
+            logError(err, stage: "set")
+            idevice_error_free(err)
+            cleanup()
+            return locationSet
+        }
+        return ok
+    }
+
+    private static func connectLocked(pairingPath: String, deviceIP: String) -> Int32 {
+        if locationSimulation != nil { return ok }
+        let started = ProcessInfo.processInfo.systemUptime
+        DeveloperLogStore.shared.record("engine_opening_new_connection")
+        var address = sockaddr_in()
+        address.sin_family = sa_family_t(AF_INET)
+        address.sin_port = in_port_t(49152).bigEndian
+        let inetResult = deviceIP.withCString { inet_pton(AF_INET, $0, &address.sin_addr) }
+        guard inetResult == 1 else { return invalidIP }
+
+        var pairingHandle: OpaquePointer?
+        if let pairingError = pairingPath.withCString({ rp_pairing_file_read($0, &pairingHandle) }) {
+            logError(pairingError, stage: "read_credentials")
+            idevice_error_free(pairingError)
+            return pairingRead
+        }
+        guard let pairingHandle else { return pairingRead }
+        defer { rp_pairing_file_free(pairingHandle) }
+
+        let providerError = withUnsafePointer(to: &address) { pointer in
+            pointer.withMemoryRebound(to: sockaddr.self, capacity: 1) {
+                tunnel_create_rppairing(
+                    $0,
+                    socklen_t(MemoryLayout<sockaddr_in>.stride),
+                    "ElsepinLocation",
+                    pairingHandle,
+                    nil,
+                    nil,
+                    &adapter,
+                    &handshake
+                )
+            }
+        }
+        if let providerError {
+            idevice_error_free(providerError)
+            cleanup()
+            return tunnelCreate
+        }
+
+        if let remoteServerError = remote_server_connect_rsd(adapter, handshake, &remoteServer) {
+            logError(remoteServerError, stage: "remote_handshake")
+            idevice_error_free(remoteServerError)
+            cleanup()
+            return remoteServerCode
+        }
+
+        if let simError = location_simulation_new(remoteServer, &locationSimulation) {
+            logError(simError, stage: "open_simulation")
+            idevice_error_free(simError)
+            cleanup()
+            return simulationCreate
+        }
+        // location_simulation_new consumes/owns remote server lifecycle alongside handle
+        remoteServer = nil
+
+        DeveloperLogStore.shared.record("engine_handshake_completed", [
+            "duration_ms": String(Int((ProcessInfo.processInfo.systemUptime - started) * 1000))])
+
+        return ok
+    }
+
+    private static func clearLocked() -> Int32 {
+        guard let locationSimulation else { return locationClear }
+        let err = location_simulation_clear(locationSimulation)
+        cleanup()
+        if let err {
+            logError(err, stage: "clear")
+            idevice_error_free(err)
+            return locationClear
+        }
+        return ok
+    }
+}
