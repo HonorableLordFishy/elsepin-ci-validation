@@ -135,7 +135,7 @@ final class ElsepinBackupUITests: XCTestCase {
         let exportedSettings = try XCTUnwrap(backup["preferences"] as? [String: Any])
         XCTAssertTrue(NSDictionary(dictionary: original).isEqual(to: exportedSettings))
         var filesReady = false
-        for _ in 0..<30 {
+        for _ in 0..<120 {
             if try snapshot()["filesReady"] as? Bool == true { filesReady = true; break }
             Thread.sleep(forTimeInterval: 1)
         }

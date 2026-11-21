@@ -22,8 +22,10 @@ def files_storage_group(device, app):
     # On some runtimes this group belongs to the LocalStorage provider rather
     # than DocumentsApp, so get_app_container's specific-group lookup rejects
     # it. Resolve only that exact group's metadata inside our owned simulator.
-    data = next(parent for parent in app.parents
-                if parent.name == 'data' and parent.parent.name == device)
+    data = next((parent for parent in app.parents
+                if parent.name == 'data' and parent.parent.name == device), None)
+    if data is None:
+        raise ValueError(f'App container {app} is outside simulator {device}')
     groups = data / 'Containers/Shared/AppGroup'
     identifiers = []
     for metadata in groups.glob('*/.com.apple.mobile_container_manager.metadata.plist'):
@@ -46,7 +48,7 @@ def main():
             app = container(device, 'com.n3mostudio.elsepin.validation', 'data')
             files = list((app / 'Documents').rglob('Elsepin-Settings*.json'))
             if not files:
-                time.sleep(5)
+                time.sleep(1)
                 continue
             source = files[0]
             payload = source.read_bytes()

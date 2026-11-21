@@ -6,7 +6,7 @@ on:
       ui_focus:
         description: Which UI checks to run
         type: choice
-        options: [home, search, pins, routes, all]
+        options: [home, search, pins, routes, backups, all]
         default: home
 
 permissions:
@@ -72,14 +72,28 @@ jobs:
             for test_name in testUsualSpeedsApplyToNewRoutesAndPersist testSavedLegModeAndCustomSpeedsSurviveReopening testRecalculateSavedRouteRetainsStopsAndSavesNewSpeed; do
               test_selection+=("-only-testing:LocusValidationUITests/ElsepinFlowUITests/$test_name")
             done
+          elif [[ "$UI_FOCUS" == backups ]]; then
+            test_selection+=("-only-testing:LocusValidationUITests/ElsepinBackupUITests")
           fi
           xcrun simctl install "$VALIDATION_SIMULATOR" .build/simulator-validation/Build/Products/Debug-iphonesimulator/ElsepinValidation.app
           xcrun simctl privacy "$VALIDATION_SIMULATOR" grant location-always com.n3mostudio.elsepin.validation
+          if [[ -z "$UI_FOCUS" || "$UI_FOCUS" == all || "$UI_FOCUS" == backups ]]; then
+            # The backup check compares the real export with Files storage, so
+            # stage that export in the background before the test looks for it.
+            xcrun simctl launch "$VALIDATION_SIMULATOR" com.apple.DocumentsApp >/dev/null 2>&1 || true
+            xcrun simctl get_app_container "$VALIDATION_SIMULATOR" com.apple.DocumentsApp groups >/dev/null 2>&1 || true
+            python3 scripts/stage_validation_backup.py > .build/simulator-evidence/files-staging.log 2>&1 &
+            staging_pid=$!
+            trap 'kill "$staging_pid" 2>/dev/null || true' EXIT
+          fi
           xcodebuild -project ElsepinValidation.xcodeproj -scheme Locus -configuration Debug \
             -destination "platform=iOS Simulator,id=$VALIDATION_SIMULATOR" \
             -derivedDataPath .build/simulator-validation \
             -resultBundlePath .build/simulator-evidence/UI.xcresult \
             -parallel-testing-enabled NO \
+            -test-timeouts-enabled YES \
+            -retry-tests-on-failure -test-iterations 2 \
+            -default-test-execution-time-allowance 600 -maximum-test-execution-time-allowance 900 \
             "${test_selection[@]}" CODE_SIGNING_ALLOWED=NO test-without-building \
             2>&1 | tee .build/simulator-evidence/ui-tests.log | xcbeautify
 

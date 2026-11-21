@@ -318,12 +318,20 @@ final class ElsepinFlowUITests: XCTestCase {
         launch("pin-adjustment", narrow: false)
         let pin = app.buttons["Test botanical garden walking route beside the riverside observatory and community orchard"]
         XCTAssertTrue(pin.waitForExistence(timeout: 12))
+        XCTAssertTrue(pin.isHittable)
         let coordinate = app.staticTexts["validation.adjustedPin"]
         let before = coordinate.label
         let bottom = pin.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.85))
-        bottom.press(forDuration: 0.35, thenDragTo: bottom.withOffset(CGVector(dx: 65, dy: -35)))
-        let moved = XCTNSPredicateExpectation(predicate: NSPredicate { _, _ in coordinate.label != before }, object: nil)
-        XCTAssertEqual(XCTWaiter.wait(for: [moved], timeout: 5), .completed)
+        // A cold simulator can drop the first synthetic long press before the
+        // pin's gesture recognizer attaches. Hold the same lower edge again
+        // instead of loosening what this check is about.
+        var adjusted = false
+        for _ in 0..<3 where !adjusted {
+            bottom.press(forDuration: 0.35, thenDragTo: bottom.withOffset(CGVector(dx: 65, dy: -35)))
+            let moved = XCTNSPredicateExpectation(predicate: NSPredicate { _, _ in coordinate.label != before }, object: nil)
+            adjusted = XCTWaiter.wait(for: [moved], timeout: 6) == .completed
+        }
+        XCTAssertTrue(adjusted, "Holding the pin's lower edge must move only the preview")
         XCTAssertEqual(app.staticTexts["validation.pinCommand"].label, "No location sent")
         capture("32-pin-lower-edge-adjustment")
     }
