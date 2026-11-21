@@ -87,9 +87,16 @@ final class ElsepinBackupUITests: XCTestCase {
         capture("33b-general-files-storage")
         XCTAssertTrue(file.waitForExistence(timeout: 20), "Exported settings file not listed")
         XCTAssertTrue(file.isEnabled, "Valid settings backup is disabled in Files")
+        // This Files build only highlights a row on the first tap, so open the
+        // already-selected export again before requiring the review screen.
         file.tap()
         if app.navigationBars.buttons["Open"].exists { app.navigationBars.buttons["Open"].tap() }
-        XCTAssertTrue(app.navigationBars["Review import"].waitForExistence(timeout: 10))
+        if !app.navigationBars["Review import"].waitForExistence(timeout: 10) {
+            file.tap()
+            if app.navigationBars.buttons["Open"].exists { app.navigationBars.buttons["Open"].tap() }
+        }
+        XCTAssertTrue(app.navigationBars["Review import"].waitForExistence(timeout: 15))
+
     }
     private func expandSettings() {
         let group = app.buttons.matching(NSPredicate(format: "label BEGINSWITH 'Settings ·'")).firstMatch
